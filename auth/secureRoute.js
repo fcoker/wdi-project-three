@@ -1,4 +1,4 @@
-const env = require('./environment');
+const env = require('../config/environment');
 const jwt = require('jsonwebtoken');
 
 function secureRoute(req, res, next) {
