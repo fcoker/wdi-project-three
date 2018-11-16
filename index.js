@@ -1,7 +1,12 @@
 const express = require('express');
 const app = express();
 
+//sham's code
+console.log('testing for merge conflicts');
+
 const { port } = require('./config/environment');
+
+
 
 app.use(express.static(`${__dirname}/public`));
 
