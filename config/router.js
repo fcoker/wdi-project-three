@@ -1,24 +1,12 @@
-const env = require('./environment');
 const router = require('express').Router();
 const eventController = require('../controllers/eventController');
+const secureRoute = require('../auth/secureRoute');
 const authController = require('../controllers/authController');
 const userController = require('../controllers/userController');
 const commentController = require('../controllers/commentController');
-const jwt = require('jsonwebtoken');
 
-function secureRoute(req, res, next) {
-  if (!req.headers.authorization)
-    res.status(401).json({ message: 'Unauthorised'});
-  const token = req.headers.authorization.replace('Bearer ', '');
-  jwt.verify(token, env.secret, function(err) {
-    if (err) {
-      res.status(401).json({ message: 'Unauthorised!' });
-    } else {
-      req.tokenUserId = jwt.decode(token).sub;
-      next();
-    }
-  });
-}
+
+
 
 router.route('/register')
   .post(authController.register);
