@@ -14,7 +14,8 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.7.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.4.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
