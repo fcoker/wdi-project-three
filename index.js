@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 
 const { port } = require('./config/environment');
+// Grant starting here
+const test = function() {
+  return console.log('Hello');
+};
 
 app.use(express.static(`${__dirname}/public`));
 
