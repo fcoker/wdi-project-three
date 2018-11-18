@@ -13,7 +13,6 @@ const eventSchema = mongoose.Schema({
       user: { type: mongoose.Schema.ObjectId, ref: 'User' }
     }
   ],
-  // Which user was a particular fish created by?
   createdBy: {
     type: mongoose.Schema.ObjectId,
     ref: 'User'
