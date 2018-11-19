@@ -6,7 +6,7 @@ function newCtrl($scope, $http, $state, $auth) {
       url: '/api/events',
       data: $scope.event
     }).then(result => $state.go('eventShow', {
-      id: result.data._id
+      eventId: result.data._id
     })).catch(error => {
       console.log(error);
       $scope.errors = error.data;
