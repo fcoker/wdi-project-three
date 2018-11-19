@@ -1,5 +1,5 @@
 function showCtrl($state, $scope, $http) {
-  $scope.comment = {};
+  // $scope.comment = {};
   $http({
     method: 'GET',
     url: `/api/events/${$state.params.eventId}`
