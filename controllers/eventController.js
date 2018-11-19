@@ -35,8 +35,8 @@ function deleteRoute(req, res, next) {
 
 function addAttendee(req, res, next) {
   Event.findById(req.params.eventId)
-    .then(event => event.attendees.push(req.body))
-    .then(event => event.save())
+    .then(event => event.attendees.push(res.body))
+    // .then(event => event.save())
     .then(event => res.json(event))
     .catch(next);
 }
