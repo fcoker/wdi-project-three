@@ -1,0 +1,16 @@
+<div class="columns is-multiline">
+  <div class="column is-offset-1 is-4">
+    <h2 class="title">{{ user.username }}'s profile page</h2>
+  </div>
+  <div class="column is-offset-1 is-5">
+    <div class="columns is-multiline">
+      <div class="column is-10" ng-repeat="event in user.eventsCreated">
+        <a ui-sref="eventShow({ eventId: event._id })">
+        <img ng-src="{{event.imageUrl}}">
+        <p>{{event.name}}</p>
+        <p>{{event.date}}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
