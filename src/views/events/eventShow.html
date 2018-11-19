@@ -1,0 +1,19 @@
+<h1 class="title is-1">{{ event.name }}</h1>
+<h2 class="subtitle is-2">{{ event.location }}</h2>
+<p>This event was added by: {{ event.createdBy.username }}</p>
+<img src="{{ event.imageUrl }}" alt="{{ event.name }}">
+<div class="buttons" ng-if="isAuthenticated() && event.createdBy._id === userId">
+  <button class="button is-primary" ui-sref="eventEdit({ eventId: event._id })">Edit</button>
+  <button class="button is-danger" ng-click="deleteEvent()">DELETE</button>
+</div>
+<div class="comments">
+  <div ng-repeat="comment in event.comments">
+    <span>{{ comment.user.username }}</span>
+    <span>{{ comment.text }}</span>
+    <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+  </div>
+  <form ng-submit="createComment()" ng-if="isAuthenticated()">
+    <input class="input" type="text" ng-model="comment.text">
+    <button class="button is-info">...</button>
+  </form>
+</div>

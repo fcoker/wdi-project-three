@@ -1,0 +1,28 @@
+<h1 class="title">Event edit</h1>
+<h2>{{ event.name }}</h2>
+<form ng-submit="editEvent()">
+  <div class="field">
+    <label class="label">Location</label>
+    <div class="control">
+      <input class="input" ng-model="event.location">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Date</label>
+    <div class="control">
+      <input class="input" ng-model="event.date">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Time to meet</label>
+    <div class="control">
+      <input class="input" ng-model="event.time">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Description</label>
+    <div class="control">
+      <input class="input" ng-model="event.description">
+    </div>
+  </div>
+</form>
