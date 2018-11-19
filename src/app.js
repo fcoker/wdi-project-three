@@ -1,13 +1,15 @@
 import angular from 'angular';
+import mainCtrl from './controllers/mainCtrl';
+import Router from './config/router';
 import '@uirouter/angularjs';
+import 'bulma';
+import 'satellizer';
+import './scss/main.scss';
 
-function Router($stateProvider, $urlRouterProvider) {
-  $stateProvider
-    .state('home', {
-      url: '/'
-    });
-  $urlRouterProvider.otherwise('/');
-}
-
-angular.module('yourAppName', ['ui.router'])
-  .config(Router);
+angular.module('Events', ['ui.router', 'satellizer'])
+  .controller('mainCtrl', mainCtrl)
+  .config(Router)
+  .config(function($authProvider){
+    $authProvider.signupUrl = '/api/register';
+    $authProvider.loginUrl = '/api/login';
+  });
