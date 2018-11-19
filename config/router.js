@@ -4,6 +4,7 @@ const secureRoute = require('../auth/secureRoute');
 const authController = require('../controllers/authController');
 const userController = require('../controllers/userController');
 const commentController = require('../controllers/commentController');
+const friendsController = require('../controllers/friendsController');
 
 router.route('/register')
   .post(authController.register);
@@ -27,6 +28,11 @@ router.route('/events/:eventId/comments/:commentId')
   .delete(secureRoute, commentController.delete);
 
 router.route('/users/:userId')
+  .post(secureRoute, friendsController.create)
   .get(userController.show);
+
+router.route('/users/:userId/friends/:friendshipId')
+  .post(secureRoute, friendsController.accept)
+  .delete(secureRoute, friendsController.reject);
 
 module.exports = router;

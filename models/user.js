@@ -4,11 +4,20 @@ const bcrypt = require('bcrypt');
 const userSchema = mongoose.Schema({
   username: {type: String, required: true},
   email: {type: String, required: true},
-  password: {type: String, required: true}
+  password: {type: String, required: true},
+  friends: [{
+    userId: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User'
+    },
+    status: {type: String, default: 'Pending'}
+  }]
 });
 
 userSchema.pre('save', function() {
-  this.password = bcrypt.hashSync(this.password, 8);
+  if (this.isModified('password')) {
+    this.password = bcrypt.hashSync(this.password, 8);
+  }
 });
 
 userSchema.methods.validatePassword = function(attemptedPassword) {
@@ -19,6 +28,12 @@ userSchema.virtual('eventsCreated', {
   ref: 'Event',
   localField: '_id',
   foreignField: 'createdBy'
+});
+
+userSchema.virtual('friendsList', {
+  ref: 'User',
+  localField: '_id',
+  foreignField: 'friends.userId'
 });
 
 userSchema.set('toJSON', {
