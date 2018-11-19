@@ -31,6 +31,16 @@ function showCtrl($state, $scope, $http) {
       url: `/api/events/${$scope.event._id}`
     }).then(() => $state.go('eventsIndex'));
   };
+  $scope.attending = function() {
+    $http({
+      method: 'POST',
+      url: `/api/events/${$state.params.eventId}/attending`,
+      data: $scope.userId
+      // In backend ctrl, needs to listen for a post req to the url
+      // events/:eventId/attending
+    });
+    console.log('hello');
+  };
 }
 
 export default showCtrl;
