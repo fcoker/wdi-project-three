@@ -33,10 +33,19 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function addAttendee(req, res, next) {
+  Event.findById(req.params.eventId)
+    .then(event => event.attendees.push(req.body))
+    .then(event => event.save())
+    .then(event => res.json(event))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   create: createRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  add: addAttendee
 };
