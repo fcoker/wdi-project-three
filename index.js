@@ -11,6 +11,7 @@ const morgan = require('morgan');
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
+app.use(express.static(`${__dirname}/public`));
 app.use('/api', router);
 
 app.use(function(error, req, res, next) {
