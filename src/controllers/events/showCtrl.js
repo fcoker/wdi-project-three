@@ -25,7 +25,7 @@ function showCtrl($state, $scope, $http) {
     }).then(result => $scope.event = result.data);
   };
 
-  $scope.handleDeleteEvent = function() {
+  $scope.deleteEvent = function() {
     $http({
       method: 'DELETE',
       url: `/api/events/${$scope.event._id}`
