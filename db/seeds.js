@@ -58,9 +58,6 @@ User.collection.drop();
 
 Event.create(eventData)
   .then(events => {
-    events.sort(function(a,b){
-      return new Date(b.date) - new Date(a.date);
-    });
     console.log(`Created ${events.length} events`);
     User.create(userData)
       .then(users => {

@@ -1,7 +1,12 @@
 const Event = require('../models/event');
 
 function indexRoute(req, res, next) {
-  Event.find().then(events => res.json(events))
+  Event.find().then(events => {
+    events.sort(function(a,b){
+      return new Date(a.date) - new Date(b.date);
+    });
+    res.json(events);
+  })
     .catch(next);
 }
 

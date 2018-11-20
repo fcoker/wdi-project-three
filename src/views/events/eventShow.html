@@ -1,9 +1,10 @@
 <h1 class="title is-1">{{ event.name }}</h1>
 <h2 class="subtitle is-2">{{ event.location }}</h2>
+<h2 class="subtitle is-2">{{ event.date }}</h2>
 <p>This event was added by: <a ui-sref="userShow({ userId: event.createdBy._id })">{{ event.createdBy.username }}</a></p>
 <img src="{{ event.imageUrl }}" alt="{{ event.name }}">
 <div class="buttons" ng-if="isAuthenticated() && event.createdBy._id === userId">
-  <button class="button is-primary" ui-sref="eventEdit({ eventId: event._id })">Edit</button>
+  <button class="button is-primary" ui-sref="eventUpdate({ eventId: event._id })">Edit</button>
   <button class="button is-danger" ng-click="deleteEvent()">DELETE</button>
 </div>
 <div class="comments">

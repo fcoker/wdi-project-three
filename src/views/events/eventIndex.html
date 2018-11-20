@@ -13,7 +13,8 @@
       <a ui-sref="eventShow({ eventId: event._id })">
         <div class="card">
           <div class="card-header">
-            {{ event.name }}
+            <p>{{ event.name }}</p>
+            <p>{{ event.date }}</p>
             <p>Going: {{ event.numberOfAttendees }}</p>
           </div>
           <div class="card-image">
