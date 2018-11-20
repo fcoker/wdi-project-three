@@ -7,7 +7,7 @@ function createRoute(req, res, next) {
       event.comments.push(req.body);
       return event.save();
     })
-    .then(event => Event.populate(event, 'createdBy comments.user'))
+    .then(event => Event.populate(event, 'createdBy comments.user attendees.attendee'))
     .then(event => res.json(event))
     .catch(next);
 }
@@ -19,7 +19,7 @@ function deleteRoute(req, res, next) {
       comment.remove();
       return event.save();
     })
-    .then(event => Event.populate(event, 'createdBy comments.user'))
+    .then(event => Event.populate(event, 'createdBy comments.user attendees.attendee'))
     .then(event => res.json(event))
     .catch(next);
 }

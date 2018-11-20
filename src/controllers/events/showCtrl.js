@@ -18,7 +18,6 @@ function showCtrl($state, $scope, $http) {
     });
   };
 
-
   $scope.deleteComment = function(comment) {
     $http({
       method: 'DELETE',
@@ -36,12 +35,21 @@ function showCtrl($state, $scope, $http) {
     $http({
       method: 'POST',
       url: `/api/events/${$state.params.eventId}/attending`,
-      data: $scope.userId
-      // In backend ctrl, needs to listen for a post req to the url
-      // events/:eventId/attending
+      data: $scope.attendee
+    }).then(result => {
+      $scope.event = result.data;
+      console.log('going');
+      $scope.isAttending = function() {
+        // if(){
+        //   //already attending
+        //   return true;
+        // } else {
+        //   //not attending
+        //   return false;
+        // }
+      };
     });
-    console.log('hello');
-  };
+  }
 }
 
 export default showCtrl;

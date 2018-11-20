@@ -36,16 +36,19 @@ function deleteRoute(req, res, next) {
 function addAttendee(req, res, next) {
   Event.findById(req.params.eventId)
     .then(event => {
-      req.body.user = req.tokenUserId;
-      Event.populate(event, 'attendees.attendee');
-      event.attendees.push({attendee: req.body.user});
-      console.log(req.body);
-      return event.save();
+      if(!event.attendees.find(att => att.attendee.toString() === req.tokenUserId)){
+        console.log(event.attendees.attendee);
+        event.attendees.push({attendee: req.tokenUserId});
+        return event.save();
+      } else {
+        res.status(422).json({message: 'Already attending'});
+        next();
+      }
     })
+    .then(event => Event.populate(event, 'createdBy comments.user attendees.attendee'))
     .then(event => res.json(event))
     .catch(next);
 }
-
 
 module.exports = {
   index: indexRoute,
