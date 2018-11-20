@@ -7,7 +7,7 @@ function indexRoute(req, res, next) {
 
 function showRoute(req, res, next) {
   Event.findById(req.params.eventId)
-    .populate('createdBy comments.user')
+    .populate('createdBy comments.user attendees.attendee')
     .then(event => res.json(event))
     .catch(next);
 }
@@ -35,11 +35,17 @@ function deleteRoute(req, res, next) {
 
 function addAttendee(req, res, next) {
   Event.findById(req.params.eventId)
-    .then(event => event.attendees.push(res.body))
-    // .then(event => event.save())
+    .then(event => {
+      req.body.user = req.tokenUserId;
+      Event.populate(event, 'attendees.attendee');
+      event.attendees.push({attendee: req.body.user});
+      console.log(req.body);
+      return event.save();
+    })
     .then(event => res.json(event))
     .catch(next);
 }
+
 
 module.exports = {
   index: indexRoute,

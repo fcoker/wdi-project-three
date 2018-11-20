@@ -13,15 +13,21 @@ const eventSchema = mongoose.Schema({
       user: { type: mongoose.Schema.ObjectId, ref: 'User' }
     }
   ],
-  createdBy: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User'
-  },
   attendees: [
     {
-      user: { type: mongoose.Schema.ObjectId, ref: 'User' }
+      attendee: { type: mongoose.Schema.ObjectId, ref: 'User' }
     }
-  ]
+  ],
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
+});
+
+eventSchema.virtual('numberOfAttendees')
+  .get(function() {
+    return this.attendees.length;
+  });
+
+eventSchema.set('toJSON', {
+  virtuals: true
 });
 
 const eventModel = mongoose.model('Event', eventSchema);
