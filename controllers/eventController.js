@@ -1,4 +1,5 @@
 const Event = require('../models/event');
+const moment = require('moment');
 
 function indexRoute(req, res, next) {
   Event.find().then(events => {
@@ -19,12 +20,16 @@ function showRoute(req, res, next) {
 
 function createRoute(req, res, next) {
   req.body.createdBy = req.tokenUserId;
+  req.body.date = moment(req.body.date).format('Do MMMM YYYY, HH:mm');
+  req.body.dateTo = moment(req.body.dateTo).format('Do MMMM YYYY, HH:mm');
   Event.create(req.body)
     .then(event => res.status(201).json(event))
     .catch(next);
 }
 
 function updateRoute(req, res, next) {
+  req.body.date = moment(req.body.date).format('Do MMMM YYYY, HH:mm');
+  req.body.dateTo = moment(req.body.dateTo).format('Do MMMM YYYY, HH:mm');
   Event.findById(req.params.eventId)
     .then(event => event.set(req.body))
     .then(event => event.save())

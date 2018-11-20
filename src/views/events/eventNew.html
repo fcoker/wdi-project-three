@@ -20,13 +20,13 @@
   <div class="field">
     <label class="label">Date</label>
     <div class="control">
-      <input type="date" class="input" ng-model="event.date" >
+      <input type="datetime-local" class="input" ng-model="event.date" >
     </div>
   </div>
   <div class="field">
-    <label class="label">Time</label>
     <div class="control">
-      <input type="time" class="input" ng-model="event.time">
+      <label class="label">Until</label>
+      <input type="datetime-local" class="input" ng-model="event.dateTo">
     </div>
   </div>
   <div class="field">
