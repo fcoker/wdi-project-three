@@ -15,7 +15,7 @@ function showRoute(req, res, next) {
 function createRoute(req, res, next) {
   req.body.createdBy = req.tokenUserId;
   Event.create(req.body)
-    .then(event => res.json(event))
+    .then(event => res.status(201).json(event))
     .catch(next);
 }
 

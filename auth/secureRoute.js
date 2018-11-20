@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 function secureRoute(req, res, next) {
   if (!req.headers.authorization)
-    res.status(401).json({ message: 'Unauthorised'});
+    return res.status(401).json({ message: 'Unauthorised'});
   const token = req.headers.authorization.replace('Bearer ', '');
   jwt.verify(token, env.secret, function(err) {
     if (err) {

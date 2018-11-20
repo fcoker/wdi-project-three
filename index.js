@@ -28,3 +28,5 @@ app.use(function(error, req, res, next) {
 
 
 app.listen(env.port, () => console.log(`Express is running on port ${env.port}`));
+
+module.exports = app;
