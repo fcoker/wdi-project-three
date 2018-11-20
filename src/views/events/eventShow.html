@@ -18,10 +18,10 @@
     <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
     <button class="button is-info">Add comment</button>
   </form>
-  <form ng-submit="attending()">
+  <form ng-if="!isAttending()" ng-submit="attending()">
     <button>I'm going!</button>
   </form>
-  <form ng-submit="notAttending()">
+  <form ng-if="isAttending()" ng-submit="notAttending()">
     <button>I'm not going!</button>
   </form>
 </div>
