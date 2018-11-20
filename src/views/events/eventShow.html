@@ -13,13 +13,16 @@
     <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
   </div>
   <form ng-submit="createComment()" ng-if="isAuthenticated()">
-    <input class="input" type="text" ng-model="comment.text">
-    <button class="button is-info">...</button>
+    <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
+    <button class="button is-info">Add comment</button>
   </form>
   <form ng-submit="attending()">
     <button>I'm Coming!!!!</button>
   </form>
-  <div ng-repeat="friend in user.friends">
-    <h5>{{ friend }}</h5>
+</div>
+<div class="attendees">
+  <h5>Attendees: {{ event.numberOfAttendees }}</h5>
+  <div ng-repeat="attender in event.attendees">
+    <h5>{{ attender.attendee.username }}</h5>
   </div>
 </div>
