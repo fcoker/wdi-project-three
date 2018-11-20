@@ -60,11 +60,30 @@ function addAttendee(req, res, next) {
     .catch(next);
 }
 
+function removeAttendee(req, res, next) {
+  Event
+    .findById(req.params.eventId)
+    .then(event => {
+      console.log('Made it here!', event);
+      if (!event.attendees.find(att => att.attendee.toString() === req.tokenUserId)) {
+        res.status(422).json({ message: 'Must first be an attendee in order to remove.'});
+      } else {
+        event.attendees = event.attendees.filter(x => x.attendee.toString() !== req.tokenUserId);
+        console.log('removed!');
+        return event.save();
+      }
+    })
+    .then(event => Event.populate(event, 'createdBy comments.user attendees.attendee'))
+    .then(event => res.json(event))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   create: createRoute,
   update: updateRoute,
   delete: deleteRoute,
-  add: addAttendee
+  add: addAttendee,
+  remove: removeAttendee
 };

@@ -27,6 +27,9 @@ router.route('/events/:eventId/comments')
 router.route('/events/:eventId/attending')
   .post(secureRoute, eventController.add);
 
+router.route('/events/:eventId/notattending')
+  .post(secureRoute, eventController.remove);
+
 router.route('/events/:eventId/comments/:commentId')
   .delete(secureRoute, commentController.delete);
 

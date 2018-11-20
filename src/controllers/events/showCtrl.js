@@ -49,7 +49,26 @@ function showCtrl($state, $scope, $http) {
         // }
       };
     });
-  }
+  };
+  $scope.notAttending = function() {
+    $http({
+      method: 'POST',
+      url: `/api/events/${$state.params.eventId}/notattending`,
+      data: $scope.attendee
+    }).then(result => {
+      $scope.event = result.data;
+      console.log('not going');
+      $scope.isAttending = function() {
+        // if(){
+        //   //already attending
+        //   return true;
+        // } else {
+        //   //not attending
+        //   return false;
+        // }
+      };
+    });
+  };
 }
 
 export default showCtrl;
