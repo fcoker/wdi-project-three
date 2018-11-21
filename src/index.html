@@ -30,7 +30,7 @@
 
         <div class="navbar-item has-dropdown is-hoverable navbar-end">
           <a class="navbar-link">
-            <img src="{{ profilePic }}" alt="{{ username }}">
+            <img ng-if="isAuthenticated()"src="{{ profilePic }}" alt="{{ username }}">
           </a>
 
           <div class="navbar-dropdown nav-item">
