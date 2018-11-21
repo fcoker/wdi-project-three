@@ -8,9 +8,9 @@
     <button class="button">🔎</button>
   </form>
   <hr>
-  <main class="main-container columns is-centered">
-  <div class="columns is-multiline is-desktop column is-8">
-    <div ng-repeat="event in filteredEvents" class="">
+  <main class="main-container columns">
+  <div class="columns column is-multiline is-desktop is-centered">
+    <div ng-repeat="event in filteredEvents" class="column is-8 has-text-centered">
       <div class="index-items">
         <a ui-sref="eventShow({ eventId: event._id })">
           <div class="card-image index-container">
