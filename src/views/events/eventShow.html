@@ -22,12 +22,13 @@
     <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
     <button class="button is-info">Add comment</button>
   </form>
-  <form ng-if="!isAttending()" ng-submit="attending()">
-    <button>I'm going!</button>
+  <form ng-submit="attendThis()">
+    <button class="button is-danger" ng-if="attending">I'm not going</button>
+    <button class="button is-success" ng-if="!attending">Attend!</button>
   </form>
-  <form ng-if="isAttending()" ng-submit="notAttending()">
+  <!-- <form ng-if="isAttending()" ng-submit="notAttending()">
     <button>I'm not going!</button>
-  </form>
+  </form> -->
 </div>
 <div class="attendees">
   <h5>Attendees: {{ event.numberOfAttendees }}</h5>
