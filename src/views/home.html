@@ -3,18 +3,15 @@
 
 <div >
   <div>
-
-      <a ui-sref="login">
-        <div>
-          <p>Login</p>
-        </div>
-      </a>
-<!--IVE ALSO HAD TO GIVE A STATE NAME TO REGISTER VIEW SO THAT I COULD DIRECT THE BELOW  -->
-      <a ui-sref="register">
-        <div>
-          <p>Register</p>
-        </div>
-      </a>
-
+    <a ng-if="!isAuthenticated()" ui-sref="login">
+      <div>
+        <p>Login</p>
+      </div>
+    </a>
+    <a ng-if="!isAuthenticated()" ui-sref="register">
+      <div>
+        <p>Register</p>
+      </div>
+    </a>
   </div>
 </div>

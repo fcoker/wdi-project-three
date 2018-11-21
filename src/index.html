@@ -18,8 +18,8 @@
         <a class="nav-items" ui-sref="home">Home</a>
         <a class="nav-items" ui-sref="eventsIndex">All Events</a>
         <a class="nav-items" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
-        <a class="nav-items" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })">Profile</a>
-        <a class="nav-items" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out {{ username }}</a>
+        <a class="nav-items" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })"><img src="{{ profilePic }}" alt="{{ username }}'s profile pic">{{ username }}</a>
+        <a class="nav-items" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
         <a class="nav-items" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
         <a class="nav-items" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
       </div>

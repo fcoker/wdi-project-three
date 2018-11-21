@@ -120,17 +120,20 @@ const userData = [
     _id: userIds[0],
     username: 'sham',
     email: 'sham@sham',
-    password: 'pass'
+    password: 'pass',
+    profilePic: 'https://i.imgur.com/jkz2QEO.jpg'
   }, {
     _id: userIds[1],
     username: 'Grant',
     email: 'grant@grant',
-    password: 'pass'
+    password: 'pass',
+    profilePic: 'http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png'
   }, {
     _id: userIds[2],
     username: 'Rob',
     email: 'rob@rob',
-    password: 'pass'
+    password: 'pass',
+    profilePic: 'http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png'
   }
 ];
 

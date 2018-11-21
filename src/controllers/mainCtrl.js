@@ -2,6 +2,7 @@ function mainCtrl($scope, $auth, $state) {
   $scope.isAuthenticated = function() {
     if ($auth.isAuthenticated()) {
       $scope.username = $auth.getPayload().username;
+      $scope.profilePic = $auth.getPayload().profilePic;
       $scope.userId = $auth.getPayload().sub;
     }
     return $auth.isAuthenticated();

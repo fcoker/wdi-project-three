@@ -3,7 +3,6 @@ function showCtrl($state, $scope, $http) {
     method: 'GET',
     url: `/api/users/${$state.params.userId}`
   }).then(result => {
-    console.log(result.data);
     $scope.user = result.data;
   });
 }

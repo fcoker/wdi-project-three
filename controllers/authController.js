@@ -8,7 +8,8 @@ function login(req, res, next) {
       if (user && user.validatePassword(req.body.password)) {
         const token = jwt.sign({
           username: user.username,
-          sub: user._id
+          sub: user._id,
+          profilePic: user.profilePic
         }, env.secret, { expiresIn: '12h' });
         res.json({
           message: `Welcome back ${user.username}!`,
@@ -24,9 +25,11 @@ function login(req, res, next) {
 }
 
 function register(req, res, next) {
+  //default profilePic link(should try to make it a local file):
+  req.body.profilePic = 'http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png';
   User.create(req.body)
     .then(user => res.json({
-      message: `${user.username} is now registered`
+      message: `${user.username} is now registered, ${user.profilePic}`
     }))
     .catch(next);
 }

@@ -1,4 +1,4 @@
-<figure class="image is-2by1 ">
+<figure class="image show-image is-2by1 ">
   <img src="{{ event.imageUrl }}" alt="{{ event.name }}">
 </figure>
 <div class="columns">
@@ -40,6 +40,7 @@
 
 <div class="comments">
   <div ng-repeat="comment in event.comments">
+    <img ng-src="{{ comment.user.profilePic }}">
     <span>{{ comment.user.username }}</span>
     <span>{{ comment.text }}</span>
     <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
