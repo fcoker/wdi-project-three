@@ -8,25 +8,23 @@
     <button class="button">🔎</button>
   </form>
   <hr>
-  <main class="main-container">
-  <div class="columns is-multiline">
-    <div ng-repeat="event in filteredEvents">
+  <main class="main-container columns is-centered">
+  <div class="columns is-multiline is-desktop column is-8">
+    <div ng-repeat="event in filteredEvents" class="">
       <div class="index-items">
-      <a ui-sref="eventShow({ eventId: event._id })">
-        <!-- <div class="card">
-          <div class="card-header"> -->
-            <h3 class="subtitle">{{ event.name }}</h3>
-            <div class="card-image">
-              <figure class="image is-2by1">
-                <img ng-src="{{ event.imageUrl }}" alt="{{ event.name }}">
-              </figure>
+        <a ui-sref="eventShow({ eventId: event._id })">
+          <div class="card-image index-container">
+            <figure class="image is-2by1">
+              <img ng-click="handleClick($event, event)" class="index-img" ng-src="{{ event.imageUrl }}" alt="{{ event.name }}">
+            </figure>
+            <div class="index-date-attendees">
+              <p>{{ event.date }}</p>
+              <p>Going: {{ event.numberOfAttendees }}</p>
             </div>
-            <p>{{ event.date }}</p>
-            <p>Going: {{ event.numberOfAttendees }}</p>
-          <!-- </div>
-        </div> -->
-      </a>
-    </div>
+          </div>
+          <h3 class="subtitle">{{ event.name }}</h3>
+        </a>
+      </div>
     </div>
   </div>
 </main>

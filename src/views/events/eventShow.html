@@ -1,50 +1,54 @@
-<figure class="image is-2by1">
+<figure class="image is-2by1 ">
   <img src="{{ event.imageUrl }}" alt="{{ event.name }}">
 </figure>
-
-<h1 class="title is-2">{{ event.name }}</h1>
-<h2 class="subtitle">{{ event.location }}</h2>
-<h2 class="subtitle">{{ event.date }}</h2>
-<p>Until</p>
-<h2 class="subtitle">{{ event.dateTo }}</h2>
-<p>This event was added by: <a class="user" ui-sref="userShow({ userId: event.createdBy._id })">{{ event.createdBy.username }}</a></p>
-
-<section class="map">
-  <h1 class="title">The map</h1>
-  <div class="button" ng-click="findUser()">
-    Find me!
-  </div>
-
-  <div id="map-element" class="map"></div>
-</section>
-
-
+<div class="columns">
+  <section class="column is-6">
+    <h1 class="title is-2">{{ event.name }}</h1>
+    <h2 class="subtitle">{{ event.location }}</h2>
+    <h2 class="subtitle">{{ event.date }}</h2>
+    <p>Until</p>
+    <h2 class="subtitle">{{ event.dateTo }}</h2>
+    <p>This event was added by: <a class="user" ui-sref="userShow({ userId: event.createdBy._id })">{{ event.createdBy.username }}</a></p>
+  </section>
+  <section class="column is-6 map-section columns is-centered">
+    <div id="map-element" class="map">
+      <div class="find-me" ng-click="findUser()">
+        <i class="fas fa-crosshairs"></i>
+      </div>
+    </div>
+  </section>
+</div>
 
 <div class="buttons" ng-if="isAuthenticated() && event.createdBy._id === userId">
   <button class="button is-primary" ui-sref="eventUpdate({ eventId: event._id })">Edit</button>
   <button class="button is-danger" ng-click="deleteEvent()">DELETE</button>
 </div>
+
+<div class="attendees">
+  <form ng-if="isAuthenticated()" ng-submit="attendThis()">
+    <button class="button is-danger" ng-if="attending">I'm not going</button>
+    <button class="button is-success" ng-if="!attending">Attend!</button>
+  </form>
+
+  <h5>Number of Attendees: {{ event.numberOfAttendees }}</h5>
+  <div class="list-of-attendees">
+    <span ng-repeat="attender in event.attendees">
+      {{ attender.attendee.username }}
+    </span>
+  </div>
+</div>
+
 <div class="comments">
   <div ng-repeat="comment in event.comments">
     <span>{{ comment.user.username }}</span>
     <span>{{ comment.text }}</span>
     <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
   </div>
-  <form ng-submit="createComment()" ng-if="isAuthenticated()">
-    <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
-    <button class="button is-info">Add comment</button>
-  </form>
-  <form ng-submit="attendThis()">
-    <button class="button is-danger" ng-if="attending">I'm not going</button>
-    <button class="button is-success" ng-if="!attending">Attend!</button>
-  </form>
-  <!-- <form ng-if="isAttending()" ng-submit="notAttending()">
-    <button>I'm not going!</button>
-  </form> -->
-</div>
-<div class="attendees">
-  <h5>Attendees: {{ event.numberOfAttendees }}</h5>
-  <div ng-repeat="attender in event.attendees">
-    <h5>{{ attender.attendee.username }}</h5>
+
+  <div ng-if="isAuthenticated()">
+    <form ng-submit="createComment()">
+      <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
+      <button class="button is-info">Add comment</button>
+    </form>
   </div>
 </div>
