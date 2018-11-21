@@ -3,6 +3,9 @@
   <section class="column is-offset-1 is-4">
     <p class="title">{{ user.username }}'s profile page</p>
     <img ng-src="{{ user.profilePic }}">
+    <div class="buttons" ng-if="isAuthenticated()">
+      <button class="button is-primary" ui-sref="userEdit({ userId: userId })">Edit profile</button>
+    </div>
   </section>
 
   <div class="column is-offset-1 is-5">

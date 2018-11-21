@@ -5,6 +5,7 @@ import eventUpdateCtrl from '../controllers/events/editCtrl';
 import userLoginCtrl from '../controllers/auth/loginCtrl';
 import userRegisterCtrl from '../controllers/auth/registerCtrl';
 import userShowCtrl from '../controllers/users/showCtrl';
+import userEditCtrl from '../controllers/users/editCtrl';
 
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -46,6 +47,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: './views/users/userShow.html',
       url: '/users/:userId',
       controller: userShowCtrl
+    })
+    .state('userEdit', {
+      templateUrl: './views/users/userEdit.html',
+      url: '/users/:userId/edit',
+      controller: userEditCtrl
     });
   $urlRouterProvider.otherwise('/');
 }
