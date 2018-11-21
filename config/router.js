@@ -18,7 +18,7 @@ router.route('/events')
 
 router.route('/events/:eventId')
   .get(eventController.show)
-  .put(secureRoute, eventController.update)
+  .put(secureRoute, eventController.edit)
   .delete(secureRoute, eventController.delete);
 
 router.route('/events/:eventId/comments')
@@ -34,6 +34,7 @@ router.route('/events/:eventId/comments/:commentId')
   .delete(secureRoute, commentController.delete);
 
 router.route('/users/:userId')
+  .put(secureRoute, userController.edit)
   .post(secureRoute, friendsController.create)
   .get(userController.show);
 

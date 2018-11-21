@@ -80,7 +80,7 @@ module.exports = {
   index: indexRoute,
   show: showRoute,
   create: createRoute,
-  update: updateRoute,
+  edit: updateRoute,
   delete: deleteRoute,
   add: addAttendee,
   remove: removeAttendee
