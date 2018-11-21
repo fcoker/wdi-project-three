@@ -7,6 +7,7 @@ function showCtrl($state, $scope, $http) {
     url: `/api/events/${$state.params.eventId}`
   }).then(result => {
     $scope.event = result.data;
+    $scope.attending = result.data.attendees.find(att => att.attendee._id === $scope.userId);
   });
 
   $scope.$watch('event', function(){
@@ -48,43 +49,31 @@ function showCtrl($state, $scope, $http) {
       url: `/api/events/${$scope.event._id}`
     }).then(() => $state.go('eventsIndex'));
   };
-  $scope.attending = function() {
-    $http({
-      method: 'POST',
-      url: `/api/events/${$state.params.eventId}/attending`,
-      data: $scope.attendee
-    }).then(result => {
-      $scope.event = result.data;
-      console.log('going');
-      $scope.isAttending = function() {
-        // if(){
-        //   //already attending
-        //   return true;
-        // } else {
-        //   //not attending
-        //   return false;
-        // }
-      };
-    });
-  };
-  $scope.notAttending = function() {
-    $http({
-      method: 'POST',
-      url: `/api/events/${$state.params.eventId}/notattending`,
-      data: $scope.attendee
-    }).then(result => {
-      $scope.event = result.data;
-      console.log('not going');
-      $scope.isAttending = function() {
-        // if(){
-        //   //already attending
-        //   return true;
-        // } else {
-        //   //not attending
-        //   return false;
-        // }
-      };
-    });
+
+
+
+  $scope.attendThis = function() {
+    if($scope.attending){
+      console.log('not going to go, being removed');
+      $http({
+        method: 'POST',
+        url: `/api/events/${$state.params.eventId}/notattending`,
+        data: $scope.attendee
+      }).then(result => {
+        $scope.attending = false;
+        $scope.event = result.data;
+      });
+    } else {
+      console.log('now attending');
+      $http({
+        method: 'POST',
+        url: `/api/events/${$state.params.eventId}/attending`,
+        data: $scope.attendee
+      }).then(result => {
+        $scope.event = result.data;
+        $scope.attending = true;
+      });
+    }
   };
   // Functions
   $scope.panMap = function(country) {

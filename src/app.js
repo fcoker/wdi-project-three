@@ -5,6 +5,7 @@ import '@uirouter/angularjs';
 import 'bulma';
 import 'satellizer';
 import './scss/main.scss';
+import '../public/style.css';
 
 angular.module('Events', ['ui.router', 'satellizer'])
   .controller('mainCtrl', mainCtrl)
