@@ -1,7 +1,7 @@
 <figure class="image show-image is-2by1 ">
   <img src="{{ event.imageUrl }}" alt="{{ event.name }}">
 </figure>
-<div class="columns">
+<div class="columns is-multiline">
   <section class="column is-6">
     <h1 class="title is-2">{{ event.name }}</h1>
     <h2 class="subtitle">{{ event.location }}</h2>
@@ -16,6 +16,9 @@
         <i class="fas fa-crosshairs"></i>
       </div>
     </div>
+  </section class="column is-6">
+  <section>
+    <p>{{ event.description }}</p>
   </section>
 </div>
 

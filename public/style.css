@@ -13,7 +13,7 @@ body {
   font-family: 'Ranga', cursive;
   font-size: 25px;
 }
-.nav-items {
+.nav-item {
   color: white;
   border-radius: 10%;
   font-weight: bold;

@@ -12,16 +12,40 @@
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Ranga" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
+
   <body class="has-navbar-fixed-top" ng-controller="mainCtrl">
+
     <nav class="navbar is-fixed-top is-dark nav">
-      <div class="">
-        <a class="nav-items" ui-sref="home">Home</a>
-        <a class="nav-items" ui-sref="eventsIndex">All Events</a>
-        <a class="nav-items" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
-        <a class="nav-items" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })"><img src="{{ profilePic }}" alt="{{ username }}'s profile pic">{{ username }}</a>
-        <a class="nav-items" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
-        <a class="nav-items" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
-        <a class="nav-items" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
+      <div class="navbar-menu">
+
+        <div class="navbar-start">
+          <div class="nav-item">
+            <a ui-sref="home">Home</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a ui-sref="eventsIndex">All Events</a>
+        </div>
+
+
+        <div class="navbar-item has-dropdown is-hoverable navbar-end">
+          <a class="navbar-link">
+            <img src="{{ profilePic }}" alt="{{ username }}">
+          </a>
+
+          <div class="navbar-dropdown nav-item">
+            <a class="nav-item column" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })">
+              Profile
+            </a>
+            <hr class="navbar-divider">
+            <a class="nav-item column" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
+            <hr class="navbar-divider">
+            <a class="nav-item column" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
+            <hr class="navbar-divider">
+            <a class="nav-item column" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
+            <a class="nav-item column" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
+          </div>
+        </div>
       </div>
     </nav>
 

@@ -6,11 +6,6 @@
     </div>
   </div>
 
-
-    <!-- <input ng-model="searchTerm" ng-change="findPlaces()">
-    <button class="button">Search</button>
-    -->
-
   <div class="result-container">
     <div class="search-results">
       <div class="result" ng-repeat="place in searchResults" ng-click="goTo(place)">
@@ -26,14 +21,13 @@
     </div>
   </div>
 
-
-
   <div class="field">
     <label class="label">Description</label>
     <div class="control">
       <input class="input" ng-model="event.description">
     </div>
   </div>
+
   <div class="field">
     <label class="label">Date</label>
     <div class="control">
@@ -46,6 +40,7 @@
       <input type="datetime-local" class="input" ng-model="event.dateTo">
     </div>
   </div>
+
   <div class="field">
     <label class="label">Image</label>
     <div class="control">
