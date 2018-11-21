@@ -1,9 +1,13 @@
-<h1 class="title is-1">{{ event.name }}</h1>
-<h2 class="subtitle is-2">{{ event.location }}</h2>
-<h2 class="subtitle is-2">{{ event.date }}</h2>
-<h2 class="subtitle is-2">{{ event.dateTo }}</h2>
-<p>This event was added by: <a ui-sref="userShow({ userId: event.createdBy._id })">{{ event.createdBy.username }}</a></p>
-<img src="{{ event.imageUrl }}" alt="{{ event.name }}">
+<figure class="image is-2by1">
+  <img src="{{ event.imageUrl }}" alt="{{ event.name }}">
+</figure>
+<h1 class="title is-2">{{ event.name }}</h1>
+<h2 class="subtitle">{{ event.location }}</h2>
+<h2 class="subtitle">{{ event.date }}</h2>
+<p>Until</p>
+<h2 class="subtitle">{{ event.dateTo }}</h2>
+<p>This event was added by: <a class="user" ui-sref="userShow({ userId: event.createdBy._id })">{{ event.createdBy.username }}</a></p>
+
 <div class="buttons" ng-if="isAuthenticated() && event.createdBy._id === userId">
   <button class="button is-primary" ui-sref="eventUpdate({ eventId: event._id })">Edit</button>
   <button class="button is-danger" ng-click="deleteEvent()">DELETE</button>
@@ -15,14 +19,14 @@
     <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
   </div>
   <form ng-submit="createComment()" ng-if="isAuthenticated()">
-    <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
-    <button class="button is-info">Add comment</button>
-  </form>
+    <input class="input" type="text" placeholder="Comment..." ng-model="comment.text"><br>
+    <button class="button is-info">Add comment</button><br>
+  </form><br>
   <form ng-submit="attending()">
-    <button>I'm going!</button>
-  </form>
+    <button class="button is-success">I'm going!</button>
+  </form><br>
   <form ng-submit="notAttending()">
-    <button>I'm not going!</button>
+    <button class="button is-danger">I'm not going!</button>
   </form>
 </div>
 <div class="attendees">
