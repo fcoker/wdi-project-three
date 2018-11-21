@@ -19,14 +19,14 @@
     <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
   </div>
   <form ng-submit="createComment()" ng-if="isAuthenticated()">
-    <input class="input" type="text" placeholder="Comment..." ng-model="comment.text"><br>
-    <button class="button is-info">Add comment</button><br>
-  </form><br>
-  <form ng-submit="attending()">
-    <button class="button is-success">I'm going!</button>
-  </form><br>
-  <form ng-submit="notAttending()">
-    <button class="button is-danger">I'm not going!</button>
+    <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
+    <button class="button is-info">Add comment</button>
+  </form>
+  <form ng-if="!isAttending()" ng-submit="attending()">
+    <button>I'm going!</button>
+  </form>
+  <form ng-if="isAttending()" ng-submit="notAttending()">
+    <button>I'm not going!</button>
   </form>
 </div>
 <div class="attendees">

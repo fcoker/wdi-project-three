@@ -31,6 +31,11 @@ function showCtrl($state, $scope, $http) {
       url: `/api/events/${$scope.event._id}`
     }).then(() => $state.go('eventsIndex'));
   };
+
+
+
+  // NOTE: think about putting both functions into one - with an if/else block,
+  //and evaluate if isAttending or not in the ctrl
   $scope.attending = function() {
     $http({
       method: 'POST',
@@ -38,15 +43,16 @@ function showCtrl($state, $scope, $http) {
       data: $scope.attendee
     }).then(result => {
       $scope.event = result.data;
-      console.log('going');
       $scope.isAttending = function() {
-        // if(){
-        //   //already attending
-        //   return true;
-        // } else {
-        //   //not attending
-        //   return false;
-        // }
+        const currentUser = result.data.attendees
+          .filter(x => x.attendee.toString() !== $scope.userId)[0].attendee._id;
+        if(currentUser === $scope.userId){
+          //already attending
+          return true;
+        } else {
+          //not attending
+          return false;
+        }
       };
     });
   };
@@ -57,16 +63,6 @@ function showCtrl($state, $scope, $http) {
       data: $scope.attendee
     }).then(result => {
       $scope.event = result.data;
-      console.log('not going');
-      $scope.isAttending = function() {
-        // if(){
-        //   //already attending
-        //   return true;
-        // } else {
-        //   //not attending
-        //   return false;
-        // }
-      };
     });
   };
 }
