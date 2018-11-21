@@ -5,12 +5,29 @@
       <input class="input" ng-model="event.name">
     </div>
   </div>
+
+
+    <!-- <input ng-model="searchTerm" ng-change="findPlaces()">
+    <button class="button">Search</button>
+    -->
+
+  <div class="result-container">
+    <div class="search-results">
+      <div class="result" ng-repeat="place in searchResults" ng-click="goTo(place)">
+        <p>{{ place.display_name }}</p>
+      </div>
+    </div>
+  </div>
+
   <div class="field">
     <label class="label">Location</label>
     <div class="control">
-      <input class="input" ng-model="event.location">
+      <input class="input" ng-model="searchTerm" ng-change="findPlaces()">
     </div>
   </div>
+
+
+
   <div class="field">
     <label class="label">Description</label>
     <div class="control">
