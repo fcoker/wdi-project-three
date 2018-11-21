@@ -1,10 +1,13 @@
 <div class="columns is-multiline">
-  <div class="column is-offset-1 is-4">
-    <h2 class="title">{{ user.username }}'s profile page</h2>
+
+  <section class="column is-offset-1 is-4">
+    <p class="title">{{ user.username }}'s profile page</p>
     <img ng-src="{{ user.profilePic }}">
-  </div>
+  </section>
+
   <div class="column is-offset-1 is-5">
-    <div class="columns is-multiline">
+
+    <section class="events-created columns is-multiline">
       <div class="column is-10" ng-repeat="event in user.eventsCreated">
         <a ui-sref="eventShow({ eventId: event._id })">
         <img ng-src="{{event.imageUrl}}">
@@ -12,14 +15,30 @@
         </a>
         <p>{{event.date}}</p>
       </div>
-    </div>
+    </section>
+
+    <section class="events-attending">
+      <p>Events attending: </p>
+      <div class="columns">
+        <div class="column is-4" ng-repeat="event in user.eventsAttending">
+          <a ui-sref="eventShow({ eventId: event._id })">
+            <p>{{event.name}}</p>
+            <img ng-src="{{event.imageUrl}}">
+            <p>{{event.date}}</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </div>
-  <div>
+
+  <!-- <div>
     <h2>Friend Me</h2>
     <form ng-if="isAuthenticated()">
       <button class="button is-primary" ng-submit="sendFriendRequest()">Add Friend</button>
     </form>
   </div>
+
   <div>
     <h2>My Friends</h2>
     <div ng-repeat="friend in user.friends">
@@ -28,5 +47,6 @@
         <p>{{ friend.status }}</p>
       </div>
     </div>
-  </div>
+  </div> -->
+
 </div>

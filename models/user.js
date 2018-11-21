@@ -31,6 +31,12 @@ userSchema.virtual('eventsCreated', {
   foreignField: 'createdBy'
 });
 
+userSchema.virtual('eventsAttending', {
+  ref: 'Event',
+  localField: '_id',
+  foreignField: 'attendees.attendee'
+});
+
 userSchema.virtual('friendsList', {
   ref: 'User',
   localField: '_id',
