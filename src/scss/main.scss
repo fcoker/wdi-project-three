@@ -98,22 +98,19 @@ figure.show-image {
   // bottom: 5vh;
   background: url('https://i.imgur.com/wwdqatq.jpg?1');
   background-size: cover;
-  height: 500px;
+  background-position: center;
+  height: 404px;
 }
 
-.homeParDiv{
-  width: 1128px;
-margin-left: 7px;
-margin-top: 50px;
-height: 70px;
+.homePar{
+
+  margin-left: 7px;
+  margin-top: 50px;
+  height: 30%;
   position: relative;
-  // top: 116px;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 
-
-  // width: 88%;
-  // left: 54px;
 }
 
 // .homeImg{
@@ -139,6 +136,11 @@ a:hover{
 .homePageContainer{
   height: 90vh;
   width: 100vw;
+}
+@media (max-width: 530px) {
+  .homePar {
+    font-size: 12px;
+  }
 }
 // .authButtonsContainer{
 //
@@ -193,13 +195,15 @@ a {
 }
 .index-date-attendees {
   position: absolute;
-  top: 15%;
-  font-size: 30px;
+  top: 71%;
+  font-size: 20px;
   text-align: center;
   color: white;
   font-weight: bold;
-  text-shadow: 0 0 0.1em #99b800, 0 0 0.1em #99b800, 0 0 0.1em #99b800;
+  // text-shadow: 0 0 0.1em #99b800, 0 0 0.1em #99b800, 0 0 0.1em #99b800;
   opacity: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
   /* left: 10%; */
 }
 .index-items {

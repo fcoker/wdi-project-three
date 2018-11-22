@@ -17,12 +17,13 @@
             <figure class="image is-2by1">
               <img ng-click="handleClick($event, event)" class="index-img" ng-src="{{ event.imageUrl }}" alt="{{ event.name }}">
             </figure>
+
             <div class="index-date-attendees">
-              <p>{{ event.date }}</p>
+              <p style="font-weight: bold;">{{ event.date }}</p>
+              <p>{{ event.name }}</p>
               <p><i class="fas fa-users"></i>: {{ event.numberOfAttendees }}</p>
             </div>
           </div>
-          <h3 class="subtitle">{{ event.name }}</h3>
         </a>
       </div>
     </div>
