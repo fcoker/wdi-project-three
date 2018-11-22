@@ -39,8 +39,13 @@
 .user-profile{
   height: 90vh;
   width: 100vw;
+  a {
+    color: black;
+  }
+  a:hover{
+    color: #666;
+  }
   .user-info{
-    // max-height: 37vh;
     img {
       max-width: 175px;
       max-height: 175px;
@@ -48,9 +53,13 @@
       min-height: 150px;
       border-radius: 50%;
     }
+    button {
+      vertical-align: middle;
+    }
   }
-  .events-created{
-    margin-top: 10px;
+  .created-section, .attending-section {
+    height: 37vh; 
+    overflow: auto;
   }
 
 }

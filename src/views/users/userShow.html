@@ -1,9 +1,9 @@
 <div class="columns is-multiline is-mobile is-centered user-profile">
 
-  <div class="column is-4-desktop is-12-mobile has-text-left">
+  <div class="column is-4-desktop is-12-mobile has-text-centered">
     <section class="user-info has-text-centered-mobile">
       <div class="field">
-        <p class="title is-size-4-mobile">{{ user.username }}'s profile
+        <p class="title is-size-4-mobile">{{ user.username }}
           <button ng-if="userId === user._id" class="button" ui-sref="userEdit({ userId: userId })"><i class="fas fa-user-edit"></i></button>
         </p>
       </div>
@@ -13,9 +13,9 @@
     </section>
   </div>
 
-  <div class="events-created column is-offset-1-desktop is-4-desktop is-11-mobile">
+  <div class="events-created column is-5-desktop is-11-mobile">
     <p class="title is-size-6-desktop is-size-6-mobile">Events created({{user.eventsCreated.length}}): </p>
-    <section class="columns is-multiline is-centered" style="height:37vh; overflow:auto;">
+    <section class="created-section columns is-multiline is-centered">
       <p ng-if="user.eventCreated">{{user.username}} has not created any events yet.</p>
       <div class="column is-10" ng-repeat="event in user.eventsCreated">
         <a ui-sref="eventShow({ eventId: event._id })">
@@ -30,7 +30,7 @@
 
   <div class="events-attending column is-10-desktop is-11-mobile">
     <p class="title is-size-6-desktop is-size-6-mobile">Events attending({{user.eventsAttending.length}}): </p>
-    <section class="" style="height:37vh; overflow-x:auto;">
+    <section class="attending-section">
       <p ng-if="user.eventsAttending.length === 0">{{user.username}} is not currently planning on going to any events.</p>
       <div class="columns is-10">
         <div class="column is-3" ng-repeat="event in user.eventsAttending">
