@@ -48,6 +48,92 @@ figure.show-image {
 }
 
 // Grant, put your code here:
+body {
+  margin: 15px;
+  text-align: center;
+  font-family: 'Allerta Stencil', sans-serif;
+}
+.nav {
+  padding-top: 10px;
+  background-image: url('https://www.huntingtonsociety.ca/wp-content/uploads/2013/11/Stary-Night-Sky-1026x320.jpg');
+  background-size: cover;
+}
+.user {
+  color: black;
+  font-family: 'Ranga', cursive;
+  font-size: 25px;
+}
+.nav-items {
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 0.1em #99b800, 0 0 0.1em #99b800, 0 0 0.1em #99b800;
+}
+.main-container {
+  position: relative;
+}
+.abs {
+  position: relative;
+}
+.index-container {
+  position: relative;
+}
+.index-img {
+  opacity: 0.9;
+  border: 1px solid black;
+  box-shadow : 0px 4px 2px #999999;
+}
+.index-date-attendees {
+  position: absolute;
+  top: 15%;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 0.1em #99b800, 0 0 0.1em #99b800, 0 0 0.1em #99b800;
+  opacity: 1;
+  /* left: 10%; */
+}
+.index-items {
+  padding: auto;
+  margin-bottom: 10px;
+  width: 100%;
+  /* bottom: 50%; */
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  box-shadow : 0px 5px 4px #999999;
+  /* height: 90px; */
+  // transition-property: height;
+  // transition-timing-function: linear;
+  // transition-duration: 0.5s;
+  position: relative;
+}
+.form-position {
+  position: relative;
+}
+.drop-search {
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+}
 
+@media (max-width: 800px) {
+  .map {
+    width: 300px;
+    height: 300px;
+  }
+}
+.show-image {
+  box-shadow: 0px 7px 5px #888888;
+}
+@media (min-width: 800px) {
+  .show-image {
+    height: 50%;
+    width: 50%;
+    margin: auto;
+  }
+}
 
 // End of Grants awesome styling!!!

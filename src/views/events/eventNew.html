@@ -1,4 +1,4 @@
-<form ng-submit="createEvent()">
+<form class="form-position" ng-submit="createEvent()">
   <div class="field">
     <label class="label">Name</label>
     <div class="control">
@@ -6,21 +6,21 @@
     </div>
   </div>
 
-  <div class="result-container">
-    <div class="search-results">
-      <div class="result" ng-repeat="place in searchResults" ng-click="goTo(place)">
-        <p>{{ place.display_name }}</p>
-      </div>
-    </div>
-  </div>
-
+  <!-- <div class="select"> -->
   <div class="field">
     <label class="label">Location</label>
     <div class="control">
       <input class="input" ng-model="searchTerm" ng-change="findPlaces()">
     </div>
   </div>
-
+  <div class="result-container">
+    <div class="search-results drop-search">
+      <div class="result" ng-repeat="place in searchResults" ng-click="goTo(place)">
+        <p>{{ place.display_name }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
   <div class="field">
     <label class="label">Description</label>
     <div class="control">
