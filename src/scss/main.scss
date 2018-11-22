@@ -35,6 +35,35 @@
 
   }
 }
+//Sham's code:
+.user-profile{
+  height: 90vh;
+  width: 100vw;
+  a {
+    color: black;
+  }
+  a:hover{
+    color: #666;
+  }
+  .user-info{
+    img {
+      max-width: 175px;
+      max-height: 175px;
+      min-width: 150px;
+      min-height: 150px;
+      border-radius: 50%;
+    }
+    button {
+      vertical-align: middle;
+    }
+  }
+  .created-section, .attending-section {
+    height: 37vh;
+    overflow: auto;
+  }
+
+}
+//End of Sham's code
 
 figure.show-image {
   margin-bottom: 5%;

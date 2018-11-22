@@ -1,39 +1,52 @@
-<div class="columns is-multiline">
+<div class="columns is-multiline is-mobile is-centered user-profile">
 
-  <section class="column is-offset-1 is-4">
-    <p class="title">{{ user.username }}'s profile page</p>
-    <img ng-src="{{ user.profilePic }}">
-    <div class="buttons" ng-if="isAuthenticated()">
-      <button class="button is-primary" ui-sref="userEdit({ userId: userId })">Edit profile</button>
-    </div>
-  </section>
-
-  <div class="column is-offset-1 is-5">
-
-    <section class="events-created columns is-multiline">
-      <div class="column is-10" ng-repeat="event in user.eventsCreated">
-        <a ui-sref="eventShow({ eventId: event._id })">
-        <img ng-src="{{event.imageUrl}}">
-        <p>{{event.name}}</p>
-        </a>
-        <p>{{event.date}}</p>
+  <div class="column is-4-desktop is-12-mobile has-text-centered">
+    <section class="user-info has-text-centered-mobile">
+      <div class="field">
+        <p class="title is-size-4-mobile">{{ user.username }}
+          <button ng-if="userId === user._id" class="button" ui-sref="userEdit({ userId: userId })"><i class="fas fa-user-edit"></i></button>
+        </p>
+      </div>
+      <div class="field">
+          <img ng-src="{{ user.profilePic }}">
       </div>
     </section>
+  </div>
 
-    <section class="events-attending">
-      <p>Events attending: </p>
-      <div class="columns">
-        <div class="column is-4" ng-repeat="event in user.eventsAttending">
+  <div class="events-created column is-5-desktop is-11-mobile">
+    <p class="title is-size-6-desktop is-size-6-mobile">Events created({{user.eventsCreated.length}}): </p>
+    <section class="created-section columns is-multiline is-centered">
+      <p ng-if="user.eventCreated">{{user.username}} has not created any events yet.</p>
+      <div class="column is-10" ng-repeat="event in user.eventsCreated">
+        <a ui-sref="eventShow({ eventId: event._id })">
+          <img ng-src="{{event.imageUrl}}">
+          <p class="is-size-6-mobile">{{event.name}}</p>
+          <p class="is-size-7-mobile">{{event.date}}</p>
+        </a>
+      </div>
+      <a class="button" ng-if="userId === user._id" ui-sref="eventCreate">Add Event</a>
+    </section>
+  </div>
+
+  <div class="events-attending column is-10-desktop is-11-mobile">
+    <p class="title is-size-6-desktop is-size-6-mobile">Events attending({{user.eventsAttending.length}}): </p>
+    <section class="attending-section">
+      <p ng-if="user.eventsAttending.length === 0">{{user.username}} is not currently planning on going to any events.</p>
+      <div class="columns is-10">
+        <div class="column is-3" ng-repeat="event in user.eventsAttending">
           <a ui-sref="eventShow({ eventId: event._id })">
-            <p>{{event.name}}</p>
             <img ng-src="{{event.imageUrl}}">
-            <p>{{event.date}}</p>
+            <p class="is-size-6-mobile">{{event.name}}</p>
+            <p class="is-size-7-mobile">{{event.date}}</p>
           </a>
+        </div>
+        <div class="column">
+          <a class="button" ng-if="userId === user._id" ui-sref="eventsIndex">Find an Event</a>
         </div>
       </div>
     </section>
-
   </div>
+
 
   <!-- <div>
     <h2>Friend Me</h2>
