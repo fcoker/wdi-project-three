@@ -1,6 +1,8 @@
-<figure class="image show-image is-2by1 ">
-  <img src="{{ event.imageUrl }}" alt="{{ event.name }}">
-</figure>
+<section class="columns">
+  <figure class="image column is-8-desktop show-image is-2by1-mobile">
+    <img src="{{ event.imageUrl }}" alt="{{ event.name }}">
+  </figure>
+</section>
 <div class="columns is-multiline">
   <section class="column is-6">
     <h1 class="title is-2">{{ event.name }}</h1>
@@ -36,23 +38,40 @@
   <h5>Number of Attendees: {{ event.numberOfAttendees }}</h5>
   <div class="list-of-attendees">
     <span ng-repeat="attender in event.attendees">
-      {{ attender.attendee.username }}
+      <!-- {{ attender.attendee.username }} -->
     </span>
   </div>
 </div>
-
-<div class="comments">
-  <div ng-repeat="comment in event.comments">
-    <img ng-src="{{ comment.user.profilePic }}">
-    <span>{{ comment.user.username }}</span>
-    <span>{{ comment.text }}</span>
-    <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+<section class="columns is-desktop is-multiline is-centered">
+  <div class="column is-4 comment">
+    <div ng-if="isAuthenticated()">
+      <form ng-submit="createComment()" class="field has-addons">
+        <div class="control">
+          <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
+        </div>
+        <div class="control">
+          <button class="button is-info">Add comment</button>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <div ng-if="isAuthenticated()">
-    <form ng-submit="createComment()">
-      <input class="input" type="text" placeholder="Comment..." ng-model="comment.text">
-      <button class="button is-info">Add comment</button>
-    </form>
+    <div class="comment-container column is-4 is-12-mobile">
+      <div ng-repeat="comment in event.comments" class="media">
+        <figure class="media-left">
+          <div class="image is-64x64">
+            <img ng-src="{{ comment.user.profilePic }}">
+          </div>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              {{ comment.user.username }}<br>
+              {{ comment.text }}
+            </p>
+          </div>
+        </div>
+        <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+      </div>
+    </div>
   </div>
-</div>
+</section>

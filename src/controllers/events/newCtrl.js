@@ -20,6 +20,7 @@ function newCtrl($scope, $http, $state, $auth) {
       $scope.searchResults = result.data;
     });
   };
+  
 }
 
 
