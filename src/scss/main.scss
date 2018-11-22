@@ -55,16 +55,21 @@ body {
 }
 .nav {
   padding-top: 10px;
-  background-image: url('https://www.huntingtonsociety.ca/wp-content/uploads/2013/11/Stary-Night-Sky-1026x320.jpg');
+  background-image: url('http://chepstowcommunitymusiccentre.weebly.com/uploads/8/0/9/7/8097281/4000981_orig.jpg');
   background-size: cover;
+  background-position: center;
+  box-shadow: 0px 5px 4px #999999;
+  opacity: 0.6;
 }
 .user {
   color: black;
   font-family: 'Ranga', cursive;
   font-size: 25px;
 }
+a {
+  color: black;
+}
 .nav-items {
-  color: white;
   font-weight: bold;
   text-shadow: 0 0 0.1em #99b800, 0 0 0.1em #99b800, 0 0 0.1em #99b800;
 }
@@ -73,6 +78,16 @@ body {
 }
 .abs {
   position: relative;
+}
+.comment {
+  margin-top: 0 auto;
+}
+.comment-container {
+  margin-top: 10px;
+  height: 200px;
+  width: 100px;
+  box-shadow : 0px 4px 2px #999999;
+  overflow: scroll;
 }
 .index-container {
   position: relative;
@@ -125,9 +140,9 @@ body {
     height: 300px;
   }
 }
-.show-image {
-  box-shadow: 0px 7px 5px #888888;
-}
+// .show-image {
+//   box-shadow: 0px 7px 5px #888888;
+// }
 @media (min-width: 800px) {
   .show-image {
     height: 50%;
