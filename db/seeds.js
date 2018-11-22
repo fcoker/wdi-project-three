@@ -82,7 +82,7 @@ const eventData = [
     createdBy: userIds[2]
   },
   {
-    name: 'Snorkel with Sharks - London Auarium ',
+    name: 'Snorkel with Sharks - London Aquarium ',
     location: 'County Hall, Westminster Bridge Rd, Lambeth, London SE1 7PB',
     imageUrl: 'https://www.telegraph.co.uk/content/dam/Travel/leadAssets/32/29/shark_swimming_3229686a.jpg?imwidth=450',
     description: 'The new evening experience, with limited slots offered on 27, 28, 29, 30 and 31 October ONLY, will see participants submerged beneath the water in a specially designed mesh enclosure, equipped with explorer-style red light torches to spot over 15 magnificent sharks in the eerie darkness. No diving experience is required. There is no minimum age requirement for participation in the experience but each participant in the experience must be 1.3 meters tall or taller.',
