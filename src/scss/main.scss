@@ -1,4 +1,5 @@
 //Sham's code:
+
 .map {
   height: 400px;
   width: 400px;
@@ -36,7 +37,7 @@
 
   }
 }
-.user-profile{
+.user-profile, .event-form-section{
   height: 90vh;
   width: 100vw;
   a {
@@ -67,6 +68,11 @@ button{
     font-weight: bold;
   }
 }
+
+.result-place:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 
 //End of Sham's code
 
@@ -250,9 +256,10 @@ a {
     position: absolute;
     z-index: 2;
     background-color: white;
-    width: 100%;
     font-size: 16px;
     padding: 14px 20px 12px 45px;
+    overflow: auto;
+    max-height: 150px;
 }
 
 @media (max-width: 800px) {
@@ -306,8 +313,5 @@ a {
 }
 .comment-text {
   margin-top: 0;
-}
-.test:hover {
-  background-color: blue;
 }
 // End of Grants awesome styling!!!

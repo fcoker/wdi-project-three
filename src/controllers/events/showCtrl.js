@@ -80,7 +80,7 @@ function showCtrl($state, $scope, $http) {
   $scope.findUser = function() {
     navigator.geolocation.getCurrentPosition(function(result) {
       mapLib.panTo([result.coords.latitude, result.coords.longitude]);
-      mapLib.addMarker([result.coords.latitude, result.coords.longitude], '🌟');
+      mapLib.addMarker([result.coords.latitude, result.coords.longitude], 'Current location');
     });
   };
 }

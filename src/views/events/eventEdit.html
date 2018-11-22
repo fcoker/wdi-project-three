@@ -1,29 +1,67 @@
-<h1 class="title">Event edit</h1>
-<h2>{{ event.name }}</h2>
-<form ng-submit="editEvent()">
-  <div class="field">
-    <label class="label">Location</label>
-    <div class="control">
-      <input class="input" ng-model="event.location">
+<section class="section">
+  <form class="form-position" ng-submit="editEvent()">
+    <div class="container">
+      <div class="section-heading">
+        <h3 class="title is-2">Edit Event</h3>
+        <h3 class="title is-3">{{ event.name }}</h3>
+      </div>
+      <br>
+
+      <div class="columns">
+        <div class="column is-6 is-offset-3">
+          <div class="box">
+
+            <div class="location-field">
+
+              <div class="field">
+                <label class="label">Location</label>
+                <div class="control">
+                  <input class="input" ng-model="searchTerm" ng-change="findPlaces()">
+                  <input class="input" ng-model="event.location" disabled>
+                </div>
+              </div>
+              <div class="result-container">
+                <div class="search-results drop-search">
+                  <div class="result" ng-repeat="place in searchResults" ng-click="handleSelection(place)">
+                    <p class="result-place">{{ place.display_name }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <div class="field">
+              <label class="label">Date</label>
+              <div class="control">
+                <input type="datetime-local" class="input" ng-model="event.date">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Until</label>
+              <div class="control">
+                <input type="datetime-local" class="input" ng-model="event.dateTo">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Description</label>
+              <div class="control">
+                <textarea class="input" ng-model="event.description"></textarea>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Image URL</label>
+              <div class="control">
+                <input class="input" ng-model="event.imageUrl">
+              </div>
+            </div>
+            <button class="button is-dark">
+              <span>Save changes</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
     </div>
-  </div>
-  <div class="field">
-    <label class="label">Date</label>
-    <div class="control">
-      <input type="datetime-local" class="input" ng-model="event.date">
-    </div>
-  </div>
-  <div class="field">
-    <label class="label">Until</label>
-    <div class="control">
-      <input type="datetime-local" class="input" ng-model="event.dateTo">
-    </div>
-  </div>
-  <div class="field">
-    <label class="label">Description</label>
-    <div class="control">
-      <input class="input" ng-model="event.description">
-    </div>
-  </div>
-  <button class="button is-link">Save changes</button>
-</form>
+  </form>
+</section>

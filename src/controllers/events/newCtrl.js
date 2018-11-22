@@ -22,7 +22,6 @@ function newCtrl($scope, $http, $state, $auth) {
     });
   };
   $scope.handleSelection = function(place) {
-    console.log(place);
     $scope.searchTerm = place.display_name;
 
     $scope.searchResults = null;
