@@ -35,6 +35,26 @@
 
   }
 }
+//Sham's code:
+.user-profile{
+  height: 90vh;
+  width: 100vw;
+  .user-info{
+    // max-height: 37vh;
+    img {
+      max-width: 175px;
+      max-height: 175px;
+      min-width: 150px;
+      min-height: 150px;
+      border-radius: 50%;
+    }
+  }
+  .events-created{
+    margin-top: 10px;
+  }
+
+}
+//End of Sham's code
 
 figure.show-image {
   margin-bottom: 5%;
@@ -55,7 +75,7 @@ body {
 }
 .nav {
   padding-top: 10px;
-  background-image: url('https://www.huntingtonsociety.ca/wp-content/uploads/2013/11/Stary-Night-Sky-1026x320.jpg');
+  // background-image: url('https://www.huntingtonsociety.ca/wp-content/uploads/2013/11/Stary-Night-Sky-1026x320.jpg');
   background-size: cover;
 }
 .user {
