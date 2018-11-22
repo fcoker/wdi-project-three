@@ -5,20 +5,17 @@
       <input class="input" ng-model="event.name">
     </div>
   </div>
-  <form>
-  <div class="select">
+  <div>
   <div class="field">
     <label class="label">Location</label>
     <div class="control">
       <input class="input" ng-model="searchTerm" ng-change="findPlaces()">
-      <button>button</button>
     </div>
   </div>
-</form>
   <div class="result-container">
     <div class="search-results drop-search">
-      <div class="result" ng-repeat="place in searchResults">
-        <p>{{ place.display_name }}</p>
+      <div class="result" ng-repeat="place in searchResults" ng-click="handleSelection(place)">
+        <p class="test">{{ place.display_name }}</p>
       </div>
     </div>
   </div>

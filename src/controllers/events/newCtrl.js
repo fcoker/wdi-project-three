@@ -1,6 +1,7 @@
 function newCtrl($scope, $http, $state, $auth) {
   $scope.createEvent = function() {
     $scope.event.createdBy = $auth.getPayload().sub;
+    $scope.event.location = $scope.searchTerm;
     $http({
       method: 'POST',
       url: '/api/events',
@@ -20,7 +21,13 @@ function newCtrl($scope, $http, $state, $auth) {
       $scope.searchResults = result.data;
     });
   };
-  
+  $scope.handleSelection = function(place) {
+    console.log(place);
+    $scope.searchTerm = place.display_name;
+
+    $scope.searchResults = null;
+  };
+
 }
 
 

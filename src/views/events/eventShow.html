@@ -59,18 +59,17 @@
       <div ng-repeat="comment in event.comments" class="media">
         <figure class="media-left">
           <div class="image is-64x64">
-            <img ng-src="{{ comment.user.profilePic }}">
+            <img class="comment-pic" ng-src="{{ comment.user.profilePic }}">
           </div>
         </figure>
         <div class="media-content">
-          <div class="content">
-            <p>
-              {{ comment.user.username }}<br>
-              {{ comment.text }}
-            </p>
+          <div class="content comment-text">
+            <p><strong class="comment-username">{{ comment.user.username }}</strong><br>
+            {{ comment.text }}
+          </p>
           </div>
         </div>
-        <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+        <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)"><i class="fas fa-trash"></i></button>
       </div>
     </div>
   </div>
