@@ -111,13 +111,6 @@ a {
 .comment {
   margin-top: 0 auto;
 }
-.comment-container {
-  margin-top: 10px;
-  height: 200px;
-  width: 100px;
-  box-shadow : 0px 4px 2px #999999;
-  overflow: scroll;
-}
 .index-container {
   position: relative;
 }
@@ -167,6 +160,17 @@ a {
   .map {
     width: 300px;
     height: 300px;
+    .leaflet-control {
+      top: 100px;
+    }
+    .find-me {
+      top: 174px;
+    }
+    .leaflet-right {
+      top: 120px;
+      right: 20px;
+      opacity: 0.6;
+    }
   }
 }
 // .show-image {
@@ -179,5 +183,32 @@ a {
     margin: auto;
   }
 }
-
+.comment-container {
+  margin-top: 10px;
+  height: 200px;
+  width: 100px;
+  // box-shadow : 0px 4px 2px #999999;
+  overflow: scroll;
+  border-radius: 3%;
+}
+.comment-pic {
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow : 0px 5px 4px #999999;
+}
+.comment-text {
+  border-radius: 5%;
+  margin-top: 5px;
+  font-family: 'Ranga', cursive;
+  font-size: 20px;
+}
+.comment-username {
+  font-family: 'Allerta Stencil', sans-serif;
+}
+.comment-text {
+  margin-top: 0;
+}
+.test:hover {
+  background-color: blue;
+}
 // End of Grants awesome styling!!!

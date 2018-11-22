@@ -1,4 +1,4 @@
-function mainCtrl($scope, $auth, $state) {
+function mainCtrl($scope, $auth, $state, $http) {
   $scope.isAuthenticated = function() {
     if ($auth.isAuthenticated()) {
       $scope.username = $auth.getPayload().username;
