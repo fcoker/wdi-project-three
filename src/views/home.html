@@ -1,14 +1,21 @@
-<h1>Welcome to Events</h1>
-<h2>The Events Planner Web App</h2>
+<div class="homePageContainer">
+  <div class="homeHeadingContainer">
+    <h1>Welcome to Events</h1>
+    <h2>The Events Planner Web App</h2>
+  </div>
 
-<div >
-  <div>
-    <a ng-if="!isAuthenticated()" ui-sref="login">
+  <div class="homeBodyDiv columns is-centered">
+    <p class="homeParDiv column is-12 is-vcentered">Your personal Event Planner for you and your freinds. Find events your friends are attending and let them know whether you are attending or not. See event locations on the map. Login or Register below to use all our features.</p>
+  </div>
+
+  <div class="authButtonsContainer columns">
+    <a class="authButtons column" ng-if="!isAuthenticated()" ui-sref="login">
       <div>
         <p>Login</p>
       </div>
     </a>
-    <a ng-if="!isAuthenticated()" ui-sref="register">
+
+    <a class="authButtons column" ng-if="!isAuthenticated()" ui-sref="register">
       <div>
         <p>Register</p>
       </div>

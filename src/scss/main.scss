@@ -75,6 +75,67 @@ figure.show-image {
     vertical-align: middle;
   }
 }
+// Femis code
+.homeHeadingContainer{
+  padding-top: 1px;
+  padding-bottom: 30px;
+}
+
+.homeBodyDiv{
+  margin-right: 25px;
+  // position: relative;
+  // bottom: 5vh;
+  background: url('https://i.imgur.com/wwdqatq.jpg?1');
+  background-size: cover;
+  height: 500px;
+}
+
+.homeParDiv{
+  width: 1128px;
+margin-left: 7px;
+margin-top: 50px;
+height: 70px;
+  position: relative;
+  // top: 116px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+
+
+  // width: 88%;
+  // left: 54px;
+}
+
+// .homeImg{
+//     height: 59vh;
+//     width: 257vh;
+//     object-fit: cover;
+//   }
+.authButtonsContainer{
+  padding-top: 17px;
+}
+.authButtons{
+  border: solid;
+  margin-right: 15vh;
+  margin-left: 15vh;
+}
+
+a{
+  color: black;
+}
+a:hover{
+  color: #666;
+}
+.homePageContainer{
+  height: 90vh;
+  width: 100vw;
+}
+// .authButtonsContainer{
+//
+//
+// }
+
+
+
 
 // Grant, put your code here:
 body {
