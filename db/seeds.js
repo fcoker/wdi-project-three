@@ -53,7 +53,7 @@ const eventData = [
   },
   {
     name: 'Paint Balling: Diamond Wars',
-    location: 'NPF Bassetts Pole, London Rd, Birmingham, West Midlands B75 5SA',
+    location: 'Bassetts Pole, Birmingham',
     imageUrl: 'http://www.bzpaintball.co.uk/wp/wp-content/uploads/2018/01/BZ-Paintball-26-11-2016-51.jpg',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     date: '30 December 2018, 12:00',
@@ -73,7 +73,7 @@ const eventData = [
   },
   {
     name: 'Rock Climbing - The Arch Climbing Wall',
-    location: 'Building One, 121 Drummond Rd, London SE16 2JY',
+    location: 'Drummond Rd, London SE16',
     imageUrl: 'https://assets.londonist.com/uploads/2014/03/i875/the-arch.png',
     description: 'The Arch is a three-venue bouldering centre. The original 10,000 square feet bouldering wall opened at The Biscuit Factory in Bermondsey, but since then it has expanded with a second venue (a flagship with over 11,000 square feet) within the same Bermondsey complex, plus a further 11,000 square feet site in north London. Routes are graded from V0 (easiest) to V9 (hardest) with around 300-400 different routes to attempt at each venue. There are 200+ new routes set every week, so the regulars don’t get bored. There are also campus boards, rings, training areas and a project board where you can set your own routes. Cafes at each location provide snacks and hot drinks to see you on your merry way.',
     date: '29 December 2018, 13:00',
@@ -93,7 +93,7 @@ const eventData = [
   },
   {
     name: 'Go Karting - Lakeside Circuit ',
-    location: 'Arterial Rd, Grays, Purfleet RM19 1EA',
+    location: 'Arterial Rd, Purfleet',
     imageUrl: 'https://www.team-sport.co.uk/media/3023/teamsport_main_header_go_karting_london_docklands_1920x1090-min.jpg',
     description: 'The perfect karting session for all abilities, with different sessions for beginners and advanced drivers this format is perfect for you to get some laps in. Excitement is guaranteed whether you are racing in our Family Fun Sessions which are set to the same speed as indoor kart circuits or if you fancy something more punchy like our unique 390cc, 70mph Sodi Race kart. These 15 minute time trial sessions are great for individuals or groups wanting to battle it out on our 925m International Circuit. Do not forget to collect your detailed laptime printout afterwards to see just how quick you were.',
     date: '2 January 2019, 19:00',

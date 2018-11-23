@@ -37,7 +37,11 @@
 
   }
 }
+.user-profile {
+  margin-top: 3%;
+}
 .user-profile, .event-form-section{
+
   height: 90vh;
   width: 100vw;
   a {
@@ -141,7 +145,7 @@ figure.show-image {
 
 // Grant, put your code here:
 body {
-  //margin: 15px; femi
+  // margin: 15px;
   text-align: center;
   font-family: 'Allerta Stencil', sans-serif;
 }
@@ -238,13 +242,17 @@ body {
       top: 100px;
     }
     .find-me {
-      top: 174px;
+      // top: 174px;
     }
     .leaflet-right {
       top: 120px;
       right: 20px;
       opacity: 0.6;
     }
+
+  }
+  .index-date-attendees {
+    top: 50%;
   }
 }
 // .show-image {
@@ -278,6 +286,9 @@ body {
 }
 .comment-username {
   font-family: 'Allerta Stencil', sans-serif;
+}
+.com-text {
+  margin: 10px;
 }
 .comment-text {
   margin-top: 0;
