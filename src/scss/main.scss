@@ -90,21 +90,10 @@ figure.show-image {
 
 // Femis code
 
-html, body {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
 .homePageContainer{
   height: 90vh;
   width: 100vw;
   padding-top: 22px;
-
-  .homeHeadingContainer{
-    //padding-top: 1px;
-    //padding-bottom: 30px;
-  }
 
   .homeHeadingContainer h1,
   .homeHeadingContainer h2 {
@@ -118,24 +107,7 @@ html, body {
     padding: 0;
   }
 
-  .btn.btn-auth {
-    border-radius: 9px;
-    margin-right: 15vh;
-    margin-left: 15vh;
-    margin-top: 0.5em;
-  }
 
-  .btn.btn-login {
-      border: solid 1px rgb(184, 203, 251);
-      background-color: rgb(212, 223, 255);
-      color: #142954;
-  }
-
-  .btn.btn-register {
-    border: solid 1px #b8fbbe;
-    background-color: #b8fbbe;
-    color: #145426;
-  }
 
   .homeBodyDiv{
     background: url('/assets/bg-image.png');
@@ -158,18 +130,6 @@ html, body {
 
   .authButtonsContainer{
     padding-top: 17px;
-
-    .authButtons{
-      border: solid;
-      margin-right: 15vh;
-      margin-left: 15vh;
-      a{
-        color: black;
-      }
-      a:hover{
-        color: #666;
-      }
-    }
   }
 
   @media (max-width: 530px) {

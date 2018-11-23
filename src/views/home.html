@@ -9,17 +9,25 @@
     <p class="homePar is-vcentered">Your personal Event Planner for you and your friends. Find events your friends are attending and let them know whether you are attending or not. See event locations on the map. Login or Register below to use all our features.</p>
   </div>
 
-  <div class="authButtonsContainer columns">
-    <a class="btn btn-auth btn-login column" ng-if="!isAuthenticated()" ui-sref="login">
-      <div>
-        <p>Login</p>
-      </div>
-    </a>
 
-    <a class="btn btn-auth btn-register btn-register column" ng-if="!isAuthenticated()" ui-sref="register">
-      <div>
-        <p>Register</p>
-      </div>
-    </a>
+<section class="section">
+  <div class="container">
+      <div class="is-4 is-offset-4">
+        <div class="field is-grouped is-grouped-centered">
+          <div class="control">
+            <button class="button is-dark" ng-if="!isAuthenticated()" ui-sref="login">
+              <span>Login</span>
+            </button>
+
+          </div>
+          <div class="control">
+            <button class=" button" ng-if="!isAuthenticated()" ui-sref="register">
+              <span>Register</span>
+            </button>
+          </div>
+        </div>
+
+    </div>
   </div>
+</section>
 </div>
