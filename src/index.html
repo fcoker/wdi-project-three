@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
 
-  <body class="has-navbar-fixed-top columns" ng-controller="mainCtrl">
+  <body class="has-navbar-fixed-top" ng-controller="mainCtrl">
     <nav class="navbar is-fixed-top is-dark nav">
       <div class="navbar-brand">
         <a class="navbar-item nav-item nav-items column" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })">
@@ -38,7 +38,8 @@
     </div>
     </nav>
 
-    <main ui-view>
+    <main class="container" ui-view>
+
     </main>
     <script type="text/javascript">
 
