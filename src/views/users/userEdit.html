@@ -1,55 +1,67 @@
 <section class="section">
   <form ng-submit="editUser()">
-  <div class="container">
-    <div class="section-heading">
-      <h3 class="title is-2">Edit User</h3>
-      <h4 class="subtitle is-5">Fill Form below</h4>
-    </div>
-    <br>
+    <div class="container">
+      <div class="section-heading">
+        <h3 class="title is-2">Edit Profile</h3>
+      </div>
+      <br>
 
-    <div class="columns">
-      <div class="column is-6 is-offset-3">
-        <div class="box">
+      <div class="columns">
+        <div class="column is-4 is-offset-4">
+          <div class="box">
 
-          <div class="field">
-            <label class="label">Email</label>
-            <div class="control">
-              <input class="input" name="email" ng-model="user.email" disabled>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left">
+                <input class="input" name="email" ng-model="user.email" disabled>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="field">
-            <label class="label">User Name</label>
-            <div class="control">
-              <input class="input" name="username" ng-model="user.username">
+            <div class="field">
+              <label class="label">User Name</label>
+              <div class="control has-icons-left">
+                <input class="input" name="username" ng-model="user.username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="field">
-            <label class="label">Profile picture URL</label>
-            <div class="control">
-              <input class="input" name="profilePic" ng-model="user.profilePic" placeholder="http://...">
+            <div class="field">
+              <label class="label">Profile picture URL</label>
+              <div class="control has-icons-left">
+                <input class="input" name="profilePic" ng-model="user.profilePic" placeholder="http://...">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-link"></i>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="field">
-            <label class="label">Change Password</label>
-            <div class="control">
-              <input class="input" name="password1" type="password" ng-model="user.password">
+            <div class="field">
+              <label class="label">Change Password</label>
+              <div class="control has-icons-left">
+                <input class="input" name="password" type="password" ng-model="user.password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="field is-grouped has-text-centered">
-            <div class="control">
-              <button id="formButton" class="button is-link is-large">
-                <span>Save changes</span>
-              </button>
+            <div class="field is-grouped is-grouped-centered">
+              <div class="control">
+                <button class="button is-dark">
+                  <span>Save changes</span>
+                </button>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
-    </div>
 
-  </div>
+    </div>
   </form>
 </section>

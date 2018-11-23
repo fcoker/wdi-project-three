@@ -1,50 +1,75 @@
-<form class="form-position" ng-submit="createEvent()">
-  <div class="field">
-    <label class="label">Name</label>
-    <div class="control">
-      <input class="input" ng-model="event.name">
-    </div>
-  </div>
-  <div>
-  <div class="field">
-    <label class="label">Location</label>
-    <div class="control">
-      <input class="input" ng-model="searchTerm" ng-change="findPlaces()">
-    </div>
-  </div>
-  <div class="result-container">
-    <div class="search-results drop-search">
-      <div class="result" ng-repeat="place in searchResults" ng-click="handleSelection(place)">
-        <p class="test">{{ place.display_name }}</p>
+<section class="section">
+  <form class="form-position" ng-submit="createEvent()">
+    <div class="container">
+      <div class="section-heading">
+        <h3 class="title is-2">Create an Event</h3>
       </div>
-    </div>
-  </div>
-  </div>
-  <div class="field">
-    <label class="label">Description</label>
-    <div class="control">
-      <input class="input" ng-model="event.description">
-    </div>
-  </div>
+      <br>
 
-  <div class="field">
-    <label class="label">Date</label>
-    <div class="control">
-      <input type="datetime-local" class="input" ng-model="event.date" >
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-      <label class="label">Until</label>
-      <input type="datetime-local" class="input" ng-model="event.dateTo">
-    </div>
-  </div>
+      <div class="columns">
+        <div class="column is-6-desktop is-offset-3">
+          <div class="box">
 
-  <div class="field">
-    <label class="label">Image</label>
-    <div class="control">
-      <input class="input" ng-model="event.imageUrl">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" ng-model="event.name">
+              </div>
+            </div>
+            <div>
+              <div class="field">
+                <label class="label">Location</label>
+                <div class="control">
+                  <input class="input" ng-model="searchTerm" ng-change="findPlaces()">
+                </div>
+              </div>
+              <div class="result-container columns">
+                <div class="search-results drop-search column is-6">
+                  <div class="result" ng-repeat="place in searchResults" ng-click="handleSelection(place)">
+                    <p class="result-place">{{ place.display_name }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="field">
+              <label class="label">Date</label>
+              <div class="control">
+                <input type="datetime-local" class="input" ng-model="event.date" >
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Until</label>
+              <div class="control">
+                <input type="datetime-local" class="input" ng-model="event.dateTo">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Description</label>
+              <div class="control">
+                <textarea class="input" ng-model="event.description"></textarea>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Image</label>
+              <div class="control">
+                <input class="input" ng-model="event.imageUrl">
+              </div>
+            </div>
+
+            <button class="button is-dark">
+              <span>Create</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <button class="button is-link">Create</button>
-</form>
+  </form>
+
+</section>
