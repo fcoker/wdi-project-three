@@ -14,4 +14,5 @@ function mainCtrl($scope, $auth, $state, $http) {
   };
 }
 
+
 export default mainCtrl;

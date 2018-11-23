@@ -145,23 +145,36 @@ body {
 }
 .nav {
   padding-top: 10px;
-  background-image: url('http://chepstowcommunitymusiccentre.weebly.com/uploads/8/0/9/7/8097281/4000981_orig.jpg');
-  background-size: cover;
+  background-color: black;
+  color: white;
+  // background-image: url('http://chepstowcommunitymusiccentre.weebly.com/uploads/8/0/9/7/8097281/4000981_orig.jpg');
+  // background-size: cover;
   background-position: center;
   box-shadow: 0px 5px 4px #999999;
-  opacity: 0.6;
+  // opacity: 0.6;
+}
+.burger-menu {
+  background-color: rgba(0, 0, 0, 0.1)
 }
 .user {
   color: black;
   font-family: 'Ranga', cursive;
   font-size: 25px;
 }
-a {
-  color: black;
+.index-title {
+  margin-top: 10%;
+  text-shadow: 7px 5px 3px #888888;
+}
+.z {
+  font-weight: bold;
 }
 .nav-items {
   font-weight: bold;
-  text-shadow: 0 0 0.1em #99b800, 0 0 0.1em #99b800, 0 0 0.1em #99b800;
+  font-size: 20px;
+  color: white;
+}
+.nav-pic {
+  height: 100%;
 }
 .main-container {
   position: relative;
@@ -189,20 +202,14 @@ a {
   font-weight: bold;
   text-shadow: 0 0 0.1em #99b800, 0 0 0.1em #99b800, 0 0 0.1em #99b800;
   opacity: 1;
-  /* left: 10%; */
 }
 .index-items {
   padding: auto;
   margin-bottom: 10px;
   width: 100%;
-  /* bottom: 50%; */
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   box-shadow : 0px 5px 4px #999999;
-  /* height: 90px; */
-  // transition-property: height;
-  // transition-timing-function: linear;
-  // transition-duration: 0.5s;
   position: relative;
 }
 .form-position {

@@ -9,47 +9,46 @@
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
     integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
     crossorigin=""></script>
-    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Ranga" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Ranga|Sedgwick+Ave" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave|Shadows+Into+Light" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
 
-  <body class="has-navbar-fixed-top" ng-controller="mainCtrl">
-
+  <body class="has-navbar-fixed-top columns" ng-controller="mainCtrl">
     <nav class="navbar is-fixed-top is-dark nav">
-      <div class="navbar-menu">
-
-        <div class="navbar-start">
-          <div class="nav-item nav-items">
-            <a ui-sref="home">Home</a>
-          </div>
-        </div>
-        <div class="nav-item nav-items">
-          <a ui-sref="eventsIndex">All Events</a>
-        </div>
-
-
-        <div class="navbar-item has-dropdown is-hoverable navbar-end">
-          <a class="navbar-link">
-            <img ng-if="isAuthenticated()"src="{{ profilePic }}" alt="{{ username }}">
-          </a>
-
-          <div class="navbar-dropdown nav-item">
-            <a class="nav-item nav-items column" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })">
-              Profile
-            </a>
-            <hr class="navbar-divider">
-            <a class="nav-item nav-items column" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
-            <hr class="navbar-divider">
-            <a class="nav-item nav-items column" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
-            <hr class="navbar-divider">
-            <a class="nav-item nav-items column" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
-            <a class="nav-item nav-items column" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
-          </div>
-        </div>
+      <div class="navbar-brand">
+        <a class="navbar-item nav-item nav-items column" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })">
+          <img ng-if="isAuthenticated()"src="{{ profilePic }}" alt="{{ username }}" class="nav-pic">
+        </a>
+        <a role="button" onclick="burger()" id="burger" class="navbar-burger burger" aria-label="menu" data-target="burger-content" aria-expanded="false">
+           <span aria-hidden="true"></span>
+           <span aria-hidden="true"></span>
+           <span aria-hidden="true"></span>
+        </a>
       </div>
+      <div class="navbar-menu burger-menu" id="burgerContent">
+      <div class="navbar-start">
+      <a class="navbar-item nav-item nav-items column is-6" ui-sref="home">Home</a>
+      <a class="navbar-item nav-item nav-items column is-6" ui-sref="eventsIndex">All Events</a>
+          <a class="navbar-item nav-item nav-items column is-6" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
+          <a class="navbar-item nav-item nav-items column is-6" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
+          <a class="navbar-item nav-item nav-items column is-6" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
+          <a class="navbar-item nav-item nav-items column is-6" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
+      </div>
+    </div>
     </nav>
 
     <main ui-view>
     </main>
+    <script type="text/javascript">
+
+      function burger() {
+        const element = document.getElementById('burger');
+        const element2 = document.getElementById('burgerContent');
+        element.classList.toggle('is-active');
+        element2.classList.toggle('is-active');
+        burgerContent();
+    }
+    </script>
   </body>
 </html>
