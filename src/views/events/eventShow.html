@@ -59,7 +59,9 @@
       <div ng-repeat="comment in event.comments" class="media">
         <figure class="media-left">
           <div class="image is-64x64">
+            <a ui-sref="userShow({ userId: comment.user._id })">
             <img class="comment-pic" ng-src="{{ comment.user.profilePic }}">
+            </a>
           </div>
         </figure>
         <div class="media-content">
