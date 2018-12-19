@@ -20,7 +20,7 @@
         <a class="navbar-item nav-item nav-items column" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })">
           <img ng-if="isAuthenticated()"src="{{ profilePic }}" alt="{{ username }}" class="nav-pic">
         </a>
-        <a role="button" onclick="burger()" id="burger" class="navbar-burger burger" aria-label="menu" data-target="burger-content" aria-expanded="false">
+        <a role="button" id="burger" class="navbar-burger burger" aria-label="menu" data-target="burger-content" aria-expanded="false">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -42,14 +42,22 @@
 
     </main>
     <script type="text/javascript">
+    const element = document.getElementById('burger');
+    const element2 = document.getElementById('burgerContent');
+    element.addEventListener('click', toggleMenu);
 
-      function burger() {
-        const element = document.getElementById('burger');
-        const element2 = document.getElementById('burgerContent');
-        element.classList.toggle('is-active');
-        element2.classList.toggle('is-active');
-        burgerContent();
+    document.querySelectorAll('a.navbar-item').forEach(link => {
+      link.addEventListener('click', (event)=> {
+        toggleMenu();
+      })
+    })
+
+    function toggleMenu() {
+      console.log('toggled menus');
+      element.classList.toggle('is-active');
+      element2.classList.toggle('is-active');
     }
+
     </script>
   </body>
 </html>
