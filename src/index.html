@@ -30,10 +30,10 @@
         <div class="navbar-start">
           <a class="navbar-item nav-item nav-items" ui-sref="home">Home</a>
           <a class="navbar-item nav-item nav-items" ui-sref="eventsIndex">All Events</a>
-          <a class="navbar-item nav-item nav-items" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
-          <a class="navbar-item nav-item nav-items" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
-          <a class="navbar-item nav-item nav-items" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
-          <a class="navbar-item nav-item nav-items" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
+          <a class="navbar-item nav-item nav-items" onclick="toggleMenu()" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
+          <a class="navbar-item nav-item nav-items" onclick="toggleMenu()" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
+          <a class="navbar-item nav-item nav-items" onclick="toggleMenu()" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
+          <a class="navbar-item nav-item nav-items" onclick="toggleMenu()" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
         </div>
       </div>
     </nav>
@@ -42,20 +42,17 @@
 
     </main>
     <script type="text/javascript">
-    const element = document.getElementById('burger');
-    const element2 = document.getElementById('burgerContent');
-    element.addEventListener('click', toggleMenu);
-
+    const burger = document.getElementById('burger');
+    const burgerContent = document.getElementById('burgerContent');
+    burger.addEventListener('click', toggleMenu);
+    //this doesn't work on the links with ng-ifs, so I added an onclick attribute manually
     document.querySelectorAll('a.navbar-item').forEach(link => {
-      link.addEventListener('click', (event)=> {
-        toggleMenu();
-      })
+      link.addEventListener('click', toggleMenu);
     })
 
     function toggleMenu() {
-      console.log('toggled menus');
-      element.classList.toggle('is-active');
-      element2.classList.toggle('is-active');
+      burger.classList.toggle('is-active');
+      burgerContent.classList.toggle('is-active');
     }
 
     </script>
