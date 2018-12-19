@@ -15,7 +15,7 @@
   </head>
 
   <body class="has-navbar-fixed-top" ng-controller="mainCtrl">
-    <nav class="navbar is-fixed-top is-dark nav">
+    <nav class="navbar is-fixed-top nav">
       <div class="navbar-brand">
         <a class="navbar-item nav-item nav-items column" ng-if="isAuthenticated()" ui-sref="userShow({ userId: userId })">
           <img ng-if="isAuthenticated()"src="{{ profilePic }}" alt="{{ username }}" class="nav-pic">
@@ -28,12 +28,12 @@
       </div>
       <div class="navbar-menu burger-menu" id="burgerContent">
         <div class="navbar-start">
-          <a class="navbar-item nav-item nav-items column is-6" ui-sref="home">Home</a>
-          <a class="navbar-item nav-item nav-items column is-6" ui-sref="eventsIndex">All Events</a>
-          <a class="navbar-item nav-item nav-items column is-6" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
-          <a class="navbar-item nav-item nav-items column is-6" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
-          <a class="navbar-item nav-item nav-items column is-6" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
-          <a class="navbar-item nav-item nav-items column is-6" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
+          <a class="navbar-item nav-item nav-items" ui-sref="home">Home</a>
+          <a class="navbar-item nav-item nav-items" ui-sref="eventsIndex">All Events</a>
+          <a class="navbar-item nav-item nav-items" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
+          <a class="navbar-item nav-item nav-items" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
+          <a class="navbar-item nav-item nav-items" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
+          <a class="navbar-item nav-item nav-items" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
         </div>
       </div>
     </nav>
