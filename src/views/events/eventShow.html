@@ -24,15 +24,15 @@
   </section>
 </div>
 
-<div class="buttons" ng-if="isAuthenticated() && event.createdBy._id === userId">
-  <button class="button is-primary" ui-sref="eventUpdate({ eventId: event._id })">Edit</button>
-  <button class="button is-danger" ng-click="deleteEvent()">DELETE</button>
-</div>
 
 <div class="attendees">
   <form ng-if="isAuthenticated()" ng-submit="attendThis()">
     <button class="button is-danger" ng-if="attending">I'm not going</button>
     <button class="button is-success" ng-if="!attending">Attend!</button>
+    <span ng-if="isAuthenticated() && event.createdBy._id === userId"
+      class="button is-primary" ui-sref="eventUpdate({ eventId: event._id })">Edit</span>
+    <span ng-if="isAuthenticated() && event.createdBy._id === userId"
+      class="button is-danger" ng-click="deleteEvent()">DELETE</span>
   </form>
 
   <h5>Number of Attendees: {{ event.numberOfAttendees }}</h5>
