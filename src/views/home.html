@@ -2,32 +2,30 @@
   <div class="homeBodyDiv is-12 is-centered">
 
     <div class="homeHeadingContainer">
-      <h1>Welcome to Events</h1>
-      <h2>The Events Planner Web App</h2>
+      <h1>Welcome to EventZ</h1>
+      <h2>The Event Planner Web App</h2>
     </div>
 
     <p class="homePar is-vcentered">Your personal Event Planner for you and your friends. Find events your friends are attending and let them know whether you are attending or not. See event locations on the map. Login or Register below to use all our features.</p>
   </div>
 
 
-<section class="section">
-  <div class="container">
-      <div class="is-4 is-offset-4">
-        <div class="field is-grouped is-grouped-centered">
-          <div class="control">
-            <button class="button is-dark" ng-if="!isAuthenticated()" ui-sref="login">
-              <span>Login</span>
-            </button>
+  <section class="section">
+        <div class="is-4 is-offset-4">
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+              <button class="button is-dark" ng-if="!isAuthenticated()" ui-sref="login">
+                <span>Login</span>
+              </button>
 
+            </div>
+            <div class="control">
+              <button class=" button" ng-if="!isAuthenticated()" ui-sref="register">
+                <span>Register</span>
+              </button>
+            </div>
           </div>
-          <div class="control">
-            <button class=" button" ng-if="!isAuthenticated()" ui-sref="register">
-              <span>Register</span>
-            </button>
-          </div>
-        </div>
 
     </div>
-  </div>
-</section>
+  </section>
 </div>

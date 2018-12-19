@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" ng-app='Events'>
   <head>
     <meta charset="utf-8">
-    <title>Events</title>
+    <title>EventZ</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin=""/>
@@ -21,21 +21,21 @@
           <img ng-if="isAuthenticated()"src="{{ profilePic }}" alt="{{ username }}" class="nav-pic">
         </a>
         <a role="button" onclick="burger()" id="burger" class="navbar-burger burger" aria-label="menu" data-target="burger-content" aria-expanded="false">
-           <span aria-hidden="true"></span>
-           <span aria-hidden="true"></span>
-           <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
       </div>
       <div class="navbar-menu burger-menu" id="burgerContent">
-      <div class="navbar-start">
-      <a class="navbar-item nav-item nav-items column is-6" ui-sref="home">Home</a>
-      <a class="navbar-item nav-item nav-items column is-6" ui-sref="eventsIndex">All Events</a>
+        <div class="navbar-start">
+          <a class="navbar-item nav-item nav-items column is-6" ui-sref="home">Home</a>
+          <a class="navbar-item nav-item nav-items column is-6" ui-sref="eventsIndex">All Events</a>
           <a class="navbar-item nav-item nav-items column is-6" ng-if="isAuthenticated()" ui-sref="eventCreate">Add Event</a>
           <a class="navbar-item nav-item nav-items column is-6" ng-if="isAuthenticated()" ng-click="handleLogout()">Log out</a>
           <a class="navbar-item nav-item nav-items column is-6" ng-if="!isAuthenticated()" ui-sref="login">Login</a>
           <a class="navbar-item nav-item nav-items column is-6" ng-if="!isAuthenticated()" ui-sref="register">Register</a>
+        </div>
       </div>
-    </div>
     </nav>
 
     <main class="container" ui-view>
