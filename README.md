@@ -110,7 +110,7 @@ if (!event.attendees.find(att => att.attendee.toString() === req.tokenUserId)) {
 ```
 
 #### Featured Piece of Code no. 2
-When editing the location of an existing event, I wanted the previous location to populate and be visible to the user. However, this presented a problem, as this input was a two-way binding ng-model, I couldn't use another ng-model for the searchTerm to overwrite it and look up an address. I overcame this by adding a disabled input field, that would display the previous and newly selected location, and also a normal input that would act as the ng-model for searchTerm.
+When editing the location of an existing event, I wanted the previous location to populate and be visible to the user. However, this presented a problem, as this input was a two-way binding ng-model, I couldn't use another ng-model for the searchTerm to overwrite it and look up an address. I overcame this by adding a disabled input field that would display the previous location, and also an input that would act as the ng-model for searchTerm.
 
 From `/src/views/events/eventEdit.html`:
 
@@ -132,16 +132,8 @@ From `/src/views/events/eventEdit.html`:
 
 ## Screenshots
 
-**At MVP**
-
-![mvp1](/images/mvp1.png)
-![mvp2](/images/mvp2.png)
-
-**Before final layout tweaks**
-
-![layout](/images/pre-style.png)
-
-### Final Product
+Home page:
+![home](/images/home.png)
 
 Index page:
 
@@ -176,22 +168,22 @@ Statistics:
 ## Bugs
 Below is a list of some of the known bugs within the app:
 
-* iFrame - if the iFrame is given an incorrect YouTube url, the show page won't render correctly, duplicating itself within the frame. If I had more time, I would have the input accept only the unique video ID, where the rest of the link is hardcoded.
-* Search bar - when a search term is deleted partially, the state doesn't update until the search term is cleared completely.
-* Rating stars - if a rating has been made, the stars don't reset if the show page is changed to another product. This is due to the ratings component being a classical component and as a result it doesn't update when the props change. I'd remedy this by adding a componentDidUpdate block to check for changes.
+* Edit event - The event date doesn't populate. I could try to resolve this by setting value to an ISO date format.
+* Location select - When picking a location suggestion from the drop-down list, it doesn't allow the user to insert a house number or extra info on the address input.
 
 ## Wins and Blockers
 
-One of the problems I faced initially was expectation management; we had planned on so many features that the workload seemed enormous and the goal - unattainable within the timeframe. This resulted in unnecessary stress. We had a meeting, revised the Trello board, redefined feature priorities and allocated more time to tasks with higher complexity.
+The biggest blocker was underestimating the complexity of the friendships feature. We spent too much time trying to figure out how to make a two way friendship work, made progress towards it, but couldn't get it working correctly. Ultimately, we decided it wasn't important enough and dropped it to concentrate on other aspects of the app.
 
-This really helped boost our group's morale and productivity.
+For me the biggest win was getting that experience of working and coding as a team, on the same project. It wasn't easy at first, but I soon realised that the team could achieve a lot more and solve more complex problems than an individual.
+The key was good communication and organisation.
 
-My biggest win, was getting the featured product suggestion working after being stuck on it for what seemed like an eternity!
+Also, I remember being really happy when I got the attending/not attending buttons to show and work as intended, after working hard at it.
 
 ## Future Content
 
 Along with fixing the known bugs, there are a number of potential future features I could implement, such as:
-* Allowing user to sort index page.
+* Allowing user to sort the index page.
 * Ability to remove specific genres from suggestions.
 * Show top 5 suggestions on the index page within the image slider.
 * Rewriting the suggestions based on relevance score - products of higher relevance will be shown first.
