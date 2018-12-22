@@ -128,42 +128,31 @@ From `/src/views/events/eventEdit.html`:
 ```
 ![edit location input](/readme-images/edit-location.png)
 
-
-
 ## Screenshots
 
-Home page:
-![home](/images/home.png)
+**Home page:**
+![home](/readme-images/home.png)
 
-Index page:
+**Register page:**
+![register](/readme-images/register.png)
 
-![index1](/images/index1.png)
-![index2](/images/index2.png)
+**Index page:**
+![index](/readme-images/index.png)
 
-Show page:
+**Show page:**
+![show](/readme-images/show.png)
 
-![show1](/images/show1.png)
-![show2](/images/show2.png)
+**Map markers with user and event location:**
+![map](/readme-images/map.png)
 
-Basket:
+**Profile page:**
+![profile](/readme-images/profile.png)
 
-![basket](/images/basket.png)
+**Edit profile page:**
+![profile-edit](/readme-images/profile-edit.png)
 
-Profile(logged in as **customer**):
-
-![customer](/images/customer.png)
-
-Profile:
-![admin](/images/admin.png)
-
-Add new product:
-
-![add](/images/add.png)
-
-Statistics:
-
-![statistics](/images/statistics.png)
-
+**Event edit:**
+![autofill](/readme-images/autofill.png)
 
 ## Bugs
 Below is a list of some of the known bugs within the app:
@@ -182,11 +171,12 @@ Also, I remember being really happy when I got the attending/not attending butto
 
 ## Future Content
 
-Along with fixing the known bugs, there are a number of potential future features I could implement, such as:
-* Allowing user to sort the index page.
-* Ability to remove specific genres from suggestions.
-* Show top 5 suggestions on the index page within the image slider.
-* Rewriting the suggestions based on relevance score - products of higher relevance will be shown first.
-* Customer support chat.
-* Stock management.
+Along with fixing the known bugs, there are a number of potential future features I could implement and complete, such as:
+* Friendships - adding and removing friends(both have to accept).
+* Eventually inviting friends to events
+* Messaging
+* Expire old events into a Past events section
+* Adding straight-line and actual walking/driving distance from user to event
+* An index map - showing all events in an area
+* Private events
 * And much more!
