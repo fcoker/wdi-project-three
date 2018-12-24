@@ -1,7 +1,7 @@
 
 # **EventZ** <img align="right" src="https://camo.githubusercontent.com/6ce15b81c1f06d716d753a61f5db22375fa684da/68747470733a2f2f67612d646173682e73332e616d617a6f6e6177732e636f6d2f70726f64756374696f6e2f6173736574732f6c6f676f2d39663838616536633963333837313639306533333238306663663535376633332e706e67"/>
 ## Overview
-Eventz is a web app planner that allows users and their friends keep track of and also add new events to it. Users are able to see which shows, restaurants, plays etc, their friends are going to and also let them know in return whether or not they would be attending. This web app is mobile friendly and also use a geolocation API to show event locations.
+Eventz is a web app planner that allows users and their friends keep track of and also add new events to it. Users are able to see which shows, restaurants, plays etc, their friends are going to and also let them know in return whether or not they would be attending. This web app is mobile friendly and also uses a geolocation API to show event locations.
 
 This was my third project of the GA Web development course and was also the first time I have worked on a coding project as a group. The timeframe for this project was also one week and the main briefing was to use Angular for the front-end.
 
@@ -46,7 +46,7 @@ GitHub [Repo](https://github.com/fcoker/wdi-project-three).
 
 ## Approach Taken
 
-I was teamed up with Grant and Sham from my course and we collectively decided that we wanted to build an events planning app. It was agreed that this sort of app would be an excellent platform thats flexible to incorporate a large amount of features. I was particularly keen on including a map in this project because I did not have enough time to add one in my previous project.
+I was teamed up with Grant and Sham from my course and we collectively decided that we wanted to build an events planning app. It was agreed that this sort of app would be an excellent platform that is flexible enough to incorporate a large amount of features. I was particularly keen on including a map in this project because I did not have enough time to add one in my previous project.
 
 We began by planning our models and what we wanted our MVP to look like. It was then decided that we individually produced wireframes and then compare and agree which layout route to go.
 
@@ -56,12 +56,9 @@ We began by planning our models and what we wanted our MVP to look like. It was 
 ![wireframes2](/readMeImgs/wf3.jpg)
 ![wireframes2](/readMeImgs/wf4.jpg)
 
-Finally before we started and after we went through our process, we broke down all the tasks we could think of and assigned ourselves to the various tasks. We used Trello to keep track of this.
+Finally before we started and after we went through our process, we broke down all the tasks we could think of and assigned ourselves to the various jobs.
 
-This was the first time I had used a platform like this and found it highly effective. We could keep track of who was doing what and also what stage we all were at the project. As a result of this MVP was reached relatively quickly.
-
-Using Trello, we broke down everything we could think of into smaller tasks - this allowed us to effectively delegate tasks and set up the basic app relatively quickly. We could keep track of who was doing what, what stage they were at and what was left to do. Below is what the board looked like at the end:
-
+We used Trello to keep track of this. This was the first time I had used a platform like this and found it highly effective. We could keep track of who was doing what and also what stage we all were at the project. As a result of this MVP was reached relatively quickly.
 
 #### Trello Board
 ![trello](/readMeImgs/trello.png)
@@ -132,7 +129,7 @@ Below is a list of some of the known bugs within the app:
 
 ## Wins and Blockers
 
-The biggest blocker I personally faced was trying to get the route or possible distance between the user and the event location on the map on the show page. I was able to get the user location and the event location markers to appear on the same map but I was not able to get the zoom feature to automatically adjust to show both markers on the same screen at the same time. I eventually had to give up on this due to time.
+The biggest blocker I personally faced was trying to get a route or possible distance between the user and the event location on the map on the show page. I was able to get the user location and the event location markers to appear on the same map but I was not able to get the zoom feature to automatically adjust to show both markers on the same screen at the same time. I eventually had to give up on this due to time.
 
 A win for me was ironically, compared to my other projects time management. I feel that working as a team and having tasks delegated to team members greatly helped in time management. I was able to focus on the tasks assigned to me without worrying about other parts of the project I haven't yet done. Another win for me was getting the map to work showing the event location.
 
